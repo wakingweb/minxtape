@@ -1,1 +1,7 @@
-<li><%= track.name %></li>
+<li>
+  <span class="title"><%= track.name %></span>
+  <audio controls>
+    <source src="<%= track.audio.url %>" type="audio/mpeg">
+      Your browser does not support the audio element.
+  </audio>
+</li>
