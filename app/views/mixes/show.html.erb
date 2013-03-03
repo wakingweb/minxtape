@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @mix.title %>
-</p>
+<h1><%= @mix.title %></h1>
+  
+<p><%= @mix.description %></p>
 
-<p>
-  <b>Description:</b>
-  <%= @mix.description %>
-</p>
+<h2>Tracks</h2>
+
+<ol>
+<%= render(@mix.tracks) || 'This tape is blank.' %>
+</ol>
 
 <%= link_to 'Edit', edit_mix_path(@mix) %> |
 <%= link_to 'Back', mixes_path %>

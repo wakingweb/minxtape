@@ -1,5 +1,5 @@
 class Mix < ActiveRecord::Base
-  attr_accessible :description, :name, :user_id, :tracks_attributes
+  attr_accessible :description, :title, :user_id, :tracks_attributes
   
   belongs_to :user
   has_many :tracks
