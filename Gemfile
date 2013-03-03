@@ -17,7 +17,6 @@ gem 'devise'
 gem 'carrierwave'
 gem 'acts_as_list'
 gem 'dalli'
-gem 'sass', :require => 'sass'
 
 
 # Gems used only for assets and not required
