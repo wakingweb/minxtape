@@ -1,4 +1,4 @@
-<%= form_for(@mix) do |f| %>
+<%= nested_form_for @mix, :html => {:multipart => true} do |f| %>
   <% if @mix.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@mix.errors.count, "error") %> prohibited this mix from being saved:</h2>
@@ -19,6 +19,16 @@
     <%= f.label :description %><br />
     <%= f.text_area :description %>
   </div>
+  
+  <!-- nested tracks form -->
+  <%= f.fields_for :tracks do |track_form| %>
+    <%= track_form.text_field :name %>
+    <%= track_form.file_field :audio %>
+    <%= track_form.hidden_field :audio_cache %>
+    <%= track_form.link_to_remove "Remove this track" %>
+  <% end %>
+  <p><%= f.link_to_add "Add a track", :tracks %></p>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

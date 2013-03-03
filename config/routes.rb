@@ -7,6 +7,10 @@ Minxtape::Application.routes.draw do
 
   devise_for :users
   
+  resources :users do
+    resources :mixes
+  end
+  
   match 'signup' => 'users#new', :as => :signup
 
   match 'logout' => 'sessions#destroy', :as => :logout

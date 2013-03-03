@@ -4,7 +4,6 @@
   <tr>
     <th>Title</th>
     <th>Description</th>
-    <th>User</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,7 +13,6 @@
   <tr>
     <td><%= mix.title %></td>
     <td><%= mix.description %></td>
-    <td><%= mix.user_id %></td>
     <td><%= link_to 'Show', mix %></td>
     <td><%= link_to 'Edit', edit_mix_path(mix) %></td>
     <td><%= link_to 'Destroy', mix, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -25,5 +23,5 @@
 <br />
 
 <% if user_signed_in? %>
-  <%= link_to 'New Mix', new_mix_path, :class => 'button' %>
+  <%= link_to 'New Mix', new_user_mix_path(current_user.id), :class => 'button' %>
 <% end %>

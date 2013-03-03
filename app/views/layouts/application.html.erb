@@ -20,7 +20,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="contain-to-grid sticky">
+  <div class="contain-to-grid">
     <nav class="top-bar">
       <ul class="title-area">
         <!-- Title Area -->
@@ -35,7 +35,7 @@
         <!-- Left Nav Section -->
         <ul class="left">
           <li class="divider"></li>
-          <li class="has-dropdown"><a href="#">Menu1</a>
+          <li class="has-dropdown"><a href="#">Genres</a>
 
             <ul class="dropdown">
               <li class="has-dropdown"><a href="#">Dropdown Level 1a</a>
@@ -99,6 +99,9 @@
     
   <div class="row">
     <div class="large-12 columns">
+      <br><br>
+      <%= image_tag('tape.jpg', :width => '200') %>
+      <br><br>
       <% if notice %>
         <div data-alert class="alert-box success">
           <%= notice %>
