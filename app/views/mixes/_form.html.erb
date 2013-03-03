@@ -20,15 +20,18 @@
     <%= f.text_area :description %>
   </div>
   
-  <!-- nested tracks form -->
-  <%= f.fields_for :tracks do |track_form| %>
-    <%= track_form.text_field :name %>
-    <%= track_form.file_field :audio %>
-    <%= track_form.link_to_remove "Remove this track" %>
-  <% end %>
-  <p><%= f.link_to_add "Add a track", :tracks, :class=>"success small button radius" %></p>
+  <fieldset>
+    <legend>Track Listing</legend>
+    <!-- nested tracks form -->
+    <%= f.fields_for :tracks do |track_form| %>
+      <%= track_form.text_field :name %>
+      <%= track_form.file_field :audio %>
+      <%= track_form.link_to_remove "Remove this track" %>
+    <% end %>
+    <%= f.link_to_add "Add a track", :tracks, :class=>"success small button radius add-a-track" %>
+  </fieldset>
   
   <div class="actions">
-    <%= f.submit 'Save', :class=>"button radius" %>
+    <%= f.submit 'Save Mix', :class=>"button radius" %>
   </div>
 <% end %>
