@@ -10,3 +10,17 @@ label[for='user_remember_me'] {
   display: inline-block;
   padding-bottom: 20px;
 }
+p#notice {
+  display:none;
+}
+.top-bar .name h1 a {
+  font-size: 28px;
+}
+.top-bar .name h1 a span {
+  font-size: 16px;
+  color: #2ba6cb;
+}
+.track-list {
+  list-style: none;
+  font-size: 24px;
+}

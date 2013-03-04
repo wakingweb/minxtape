@@ -4,9 +4,9 @@
   
 <p><%= @mix.description %></p>
 
-<ol>
+<ul class="track-list">
 <%= render(@mix.tracks) || 'This tape is blank.' %>
-</ol>
+</ul>
 
 <%= link_to 'Edit', edit_mix_path(@mix) %> |
 <%= link_to 'Back', mixes_path %>

@@ -1,31 +1,16 @@
-<h1>Listing mixes</h1>
+<h1>Mixes</h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th></th>
-    <% if user_signed_in? %>
-      <th></th>
-      <th></th>
-    <% end %>
-  </tr>
-
+<ul class="mix-list small-block-grid-4">
 <% @mixes.each do |mix| %>
-  <tr>
-    <td><%= mix.title %></td>
-    <td><%= mix.description %></td>
-    <td><%= link_to 'Show', mix %></td>
+  <li>
+    <h2><%= link_to mix.title, mix %></h2>
+    <p><%= mix.description %></p>
     <% if user_signed_in? && (mix.user_id = current_user.id) %>
-      <td><%= link_to 'Edit', edit_mix_path(mix) %></td>
-      <td><%= link_to 'Destroy', mix, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <span><%= link_to 'Edit', edit_mix_path(mix) %></span>
+      <!-- <span><%= link_to 'Destroy', mix, method: :delete, data: { confirm: 'Are you sure?' } %></span> -->
     <% end %>
-  </tr>
+  </li>
 <% end %>
-</table>
+</ul>
 
 <br />
-
-<% if user_signed_in? %>
-  <%= link_to 'New Mix', new_user_mix_path(current_user.id), :class => 'button' %>
-<% end %>
