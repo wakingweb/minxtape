@@ -1,4 +1,4 @@
-<h1>Mixes</h1>
+<h1>all mixes</h1>
 
 <ul class="mix-list small-block-grid-4">
 <% @mixes.each do |mix| %>
@@ -7,7 +7,7 @@
     <p><%= mix.description %></p>
     <% if user_signed_in? && (mix.user_id = current_user.id) %>
       <span><%= link_to 'Edit', edit_mix_path(mix) %></span>
-      <!-- <span><%= link_to 'Destroy', mix, method: :delete, data: { confirm: 'Are you sure?' } %></span> -->
+      | <span><%= link_to 'Destroy', mix, method: :delete, data: { confirm: 'Are you sure?' } %></span>
     <% end %>
   </li>
 <% end %>

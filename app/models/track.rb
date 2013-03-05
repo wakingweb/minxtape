@@ -1,5 +1,5 @@
 class Track < ActiveRecord::Base
-  attr_accessible :artist, :mix_id, :name, :audio
+  attr_accessible :mix_id, :artist, :name, :audio, :position
   belongs_to :mix
 
   acts_as_list :scope => :mix
