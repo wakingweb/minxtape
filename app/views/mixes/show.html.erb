@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= link_to 'all mixes', mixes_path %> &rarr; <%= @mix.title %></h1>
-<%= image_tag(@mix.art.thumb) %>
-<p><%= @mix.description %></p>
+<article style="background-image: url(<%= @mix.art.thumb %>);">
+  <h1><%= @mix.title %></h1>
+  <p><%= @mix.description %></p>
+</article>
 
 <ul class="track-list">
 <%= render(@mix.tracks) || 'This tape is blank.' %>

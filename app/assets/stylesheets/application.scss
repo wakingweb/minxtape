@@ -32,3 +32,27 @@ label[for='user_remember_me'] {
 .ui-hidden-accessible {
   display: none;
 }
+
+
+/* mixes */
+article {
+  width: 300px;
+  height: 200px;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+article h1 {
+  display: inline-block;
+  color: #fff;
+  margin: 0;
+  padding: 5px;
+  background-color: rgba(0,0,0,0.4);
+  font-weight: 900;
+}
+article p {
+  font-size: 16px;
+  display: inline-block;
+  padding: 5px;
+  background-color: rgba(0,0,0,0.4);
+  color: #fff;  
+}

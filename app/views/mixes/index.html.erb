@@ -1,3 +1,7 @@
+<% if user_signed_in? %>
+  <%= link_to 'New Mix', new_user_mix_path(current_user), :class => 'button radius' %>
+<% end %>
+
 <h1>All mixes</h1>
 
 <ul class="mix-list small-block-grid-4">
