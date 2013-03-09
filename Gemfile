@@ -20,18 +20,17 @@ gem 'dalli'
 gem 'thin'
 gem "fog", "~> 1.3.1"
 gem "nested_form"
-gem "sprockets", "= 2.2.1"
+gem "mini_magick"
 
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
-  gem 'compass-rails'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
   # foundation
-  gem 'zurb-foundation', '~> 4.0.0'
+  gem 'zurb-foundation', '~> 4.0.4'
 end
 
 gem 'jquery-rails'

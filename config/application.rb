@@ -60,8 +60,8 @@ module Minxtape
     config.assets.version = '1.0'
     
     # for heroku
-    config.assets.initialize_on_precompile = true
+    config.assets.initialize_on_precompile = false
     # Precompile *all* assets, except those that start with underscore
-    config.assets.precompile << /(^[^_\/]|\/[^_])[^\/]*$/
+    # config.assets.precompile << /(^[^_\/]|\/[^_])[^\/]*$/
   end
 end

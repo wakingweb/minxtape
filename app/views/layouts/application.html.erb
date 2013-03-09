@@ -13,7 +13,7 @@
 	<!-- Set the viewport width to device width for mobile -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	
-	<title><%= content_for?(:title) ? yield(:title) : "MinxTape" %></title>
+	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
 	<%= stylesheet_link_tag    "application" %>
 	<%= javascript_include_tag "vendor/custom.modernizr" %>
@@ -22,95 +22,48 @@
 <body>
   <div class="contain-to-grid">
     <nav class="top-bar">
-      <ul class="title-area">
-        <!-- Title Area -->
-        <li class="name">
-          <h1><a href="/">MinxTape <span>Mix tapes. Remixed.</span></a> </h1>
-        </li>
-        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-      </ul>
+    <ul class="title-area">
+      <!-- Title Area -->
+      <li class="name">
+        <h1><a href="/">MinxTape <span>Mix tapes. Remixed.</span></a> </h1>
+      </li>
+      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
 
-      <section class="top-bar-section">
-        <!-- Left Nav Section -->
-        <!-- 
-        <ul class="left">
-          <li class="divider"></li>
-          <li class="has-dropdown"><a href="#">Genres</a>
-
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <% if user_signed_in? %>
+          <li class="divider hide-for-small"></li>
+          <li class="has-dropdown"><a href="#">Settings</a>
             <ul class="dropdown">
-              <li class="has-dropdown"><a href="#">Dropdown Level 1a</a>
-
-                <ul class="dropdown">
-                  <li><label>Dropdown Level 2 Label</label></li>
-                  <li><a href="#">Dropdown Level 2a</a></li>
-                  <li><a href="#">Dropdown Level 2b</a></li>
-                  <li class="has-dropdown"><a href="#">Dropdown Level 2c</a>
-
-                    <ul class="dropdown">
-                      <li><label>Dropdown Level 3 Label</label></li>
-                      <li><a href="#">Dropdown Level 3a</a></li>
-                      <li><a href="#">Dropdown Level 3b</a></li>
-                      <li class="divider"></li>
-                      <li><a href="#">Dropdown Level 3c</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">Dropdown Level 2d</a></li>
-                  <li><a href="#">Dropdown Level 2e</a></li>
-                  <li><a href="#">Dropdown Level 2f</a></li>
-                </ul>
+              <li>
+                <%= link_to('Edit profile', edit_user_registration_path) %>
               </li>
-              <li><a href="#">Dropdown Level 1b</a></li>
-              <li><a href="#">Dropdown Level 1c</a></li>
-              <li class="divider"></li>
-              <li><a href="#">Dropdown Level 1d</a></li>
-              <li><a href="#">Dropdown Level 1e</a></li>
-              <li><a href="#">Dropdown Level 1f</a></li>
-              <li class="divider"></li>
-              <li><a href="#">See all &rarr;</a></li>
+              <li>
+                <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+              </li>
             </ul>
           </li>
-          <li class="divider"></li>
-        </ul>
-        -->
-
-        <!-- Right Nav Section -->
-        <ul class="right">
-          <% if user_signed_in? %>
-            <li class="divider hide-for-small"></li>
-            <li class="has-dropdown"><a href="#">Settings</a>
-              <ul class="dropdown">
-                <li>
-                  <%= link_to('Edit profile', edit_user_registration_path) %>
-                </li>
-                <li>
-                  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
-                </li>
-              </ul>
-            </li>
-          <% else %>
-            <li class="divider show-for-small"></li>
-            <li class="has-form">
-              <%= link_to('Login', new_user_session_path, :class => "button radius")  %>  
-            </li>
-            <li class="has-form">
-              <%= link_to('Sign Up', new_user_registration_path, :class => "button radius")  %>  
-            </li>
-          <% end %>
-        </ul>
-      </section>
-    </nav>
+        <% else %>
+          <li class="divider show-for-small"></li>
+          <li class="has-form">
+            <%= link_to('Login', new_user_session_path, :class => "button radius")  %>  
+          </li>
+          <li class="has-form">
+            <%= link_to('Sign Up', new_user_registration_path, :class => "button radius")  %>  
+          </li>
+        <% end %>
+      </ul>
+    </section>
+  </nav>
   </div>
-    
   <div class="row">
-    <div class="large-12 columns">
-      <br><br>
-      <%= image_tag('tape.jpg', :width => '200') %>
-      <br><br>
-      <% if user_signed_in? %>
-        <%= link_to 'Create a Mix', new_user_mix_path(current_user.id), :class => 'button radius' %>
-      <% end %>
-      
+    <div class="large-12 columns">      
+      <div id="logo">
+        <%= image_tag('tape.jpg', :width => '200') %>  
+      </div>
       <% if notice %>
         <div data-alert class="alert-box success radius">
           <%= notice %>

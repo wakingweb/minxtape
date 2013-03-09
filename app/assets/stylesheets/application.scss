@@ -1,14 +1,7 @@
 @import "foundation";
 
-input[type='file'] {
-  margin: 5px 0 30px 0;
-}
-#user_remember_me {
-  display: inline;
-}
-label[for='user_remember_me'] {
-  display: inline-block;
-  padding-bottom: 20px;
+#logo {
+  padding: 20px 0;
 }
 p#notice {
   display:none;
@@ -23,4 +16,19 @@ p#notice {
 .track-list {
   list-style: none;
   font-size: 24px;
+}
+
+/* forms */
+input[type='file'] {
+  margin: 5px 0 30px 0;
+}
+#user_remember_me {
+  display: inline;
+}
+label[for='user_remember_me'] {
+  display: inline-block;
+  padding-bottom: 20px;
+}
+.ui-hidden-accessible {
+  display: none;
 }
