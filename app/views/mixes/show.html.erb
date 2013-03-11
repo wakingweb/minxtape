@@ -60,7 +60,7 @@
 		</div>
 	</div>
 </div><!-- .jp-audio -->
-<% if user_signed_in? && (@mix.user.id == current_user.id)%>
+<% if user_signed_in? && (@mix.user_id == current_user.id)%>
   <%= link_to 'Edit', edit_mix_path(@mix), :class => "button radius" %>
 <% end %>
 
