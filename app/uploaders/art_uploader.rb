@@ -24,9 +24,14 @@ class ArtUploader < CarrierWave::Uploader::Base
   
   process :resize_to_fit => [800, 800]
 
+  version :square do
+    process :resize_to_fill => [150,150]
+  end
+
   version :thumb do
     process :resize_to_fill => [300,200]
   end
+
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url

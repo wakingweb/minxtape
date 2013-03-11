@@ -21,6 +21,7 @@ gem 'thin'
 gem "fog", "~> 1.3.1"
 gem "nested_form"
 gem "mini_magick"
+gem "sass"
 
 
 # Gems used only for assets and not required

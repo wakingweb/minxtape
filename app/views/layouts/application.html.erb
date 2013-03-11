@@ -13,10 +13,11 @@
 	<!-- Set the viewport width to device width for mobile -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	
-	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+	<title><%= content_for?(:title) ? yield(:title) : "MinxTape" %></title>
 
 	<%= stylesheet_link_tag    "application" %>
 	<%= javascript_include_tag "vendor/custom.modernizr" %>
+  <%= yield :head %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -75,10 +76,16 @@
           <a href="#" class="close">&times;</a>
         </div>
       <% end %>
+      <% if user_signed_in? %>
+        <%= link_to 'New Mix', new_user_mix_path(current_user), :class => 'button radius new-mix' %>
+      <% end %>
       <%= yield %>
     </div>
   </div>
   
   <%= javascript_include_tag "application" %>
+  <%= javascript_tag do
+        yield :javascripts
+      end %>
 </body>
 </html>

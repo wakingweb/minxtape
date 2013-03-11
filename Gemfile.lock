@@ -160,6 +160,7 @@ DEPENDENCIES
   nested_form
   pg
   rails (= 3.2.12)
+  sass
   sass-rails (~> 3.2.3)
   sqlite3
   thin

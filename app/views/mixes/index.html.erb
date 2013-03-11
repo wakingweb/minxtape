@@ -1,12 +1,11 @@
-<% if user_signed_in? %>
-  <%= link_to 'New Mix', new_user_mix_path(current_user), :class => 'button radius' %>
-<% end %>
-
-<h1>All mixes</h1>
+<ul class="breadcrumbs">
+  <li class="unavailable"><%= link_to 'All Mixes', mixes_path %></li>
+</ul>
 
 <ul class="mix-list small-block-grid-4">
 <% @mixes.each do |mix| %>
   <li>
+    <%= image_tag mix.art.square %>
     <h2><%= link_to mix.title, mix %></h2>
     <p><%= mix.description %></p>
     <% if user_signed_in? && (mix.user_id = current_user.id) %>
