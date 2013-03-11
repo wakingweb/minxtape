@@ -2,12 +2,16 @@
   <li class="unavailable"><%= link_to 'All Mixes', mixes_path %></li>
 </ul>
 
-<ul class="mix-list small-block-grid-4">
+<ul class="mix-list small-block-grid-2 large-block-grid-3">
 <% @mixes.each do |mix| %>
   <li>
-    <%= image_tag mix.art.square %>
-    <h2><%= link_to mix.title, mix %></h2>
-    <p><%= mix.description %></p>
+    <article style="background-image: url(<%= mix.art.thumb %>);">
+      <a href="<%= mix_path(mix) %>">
+        <header>
+          <h1><%= mix.title %></h1>
+        </header>
+      </a>
+    </article>
     <% if user_signed_in? && (mix.user_id = current_user.id) %>
       <span><%= link_to 'Edit', edit_mix_path(mix) %></span>
       | <span><%= link_to 'Destroy', mix, method: :delete, data: { confirm: 'Are you sure?' } %></span>
@@ -15,5 +19,3 @@
   </li>
 <% end %>
 </ul>
-
-<br />

@@ -26,7 +26,7 @@
     <ul class="title-area">
       <!-- Title Area -->
       <li class="name">
-        <h1><a href="/">MinxTape <span>Mix tapes. Remixed.</span></a> </h1>
+        <h1><a href="/">MinxTape</a> </h1>
       </li>
       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
       <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -77,11 +77,21 @@
         </div>
       <% end %>
       <% if user_signed_in? %>
-        <%= link_to 'New Mix', new_user_mix_path(current_user), :class => 'button radius new-mix' %>
+        <%= link_to '+ New Mix', new_user_mix_path(current_user), :class => 'small button radius new-mix' %>
       <% end %>
       <%= yield %>
     </div>
   </div>
+  
+  <footer>
+    <div class="row">
+      <div class="large-12 columns">
+        <%= image_tag('tape-inverse.jpg', :width => '100') %>  
+        <h4>MinxTape</h4>
+        <h5>Mix tapes. Remixed.</h5>
+      </div>
+    </div>
+  </footer>
   
   <%= javascript_include_tag "application" %>
   <%= javascript_tag do
