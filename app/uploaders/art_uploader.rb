@@ -29,7 +29,7 @@ class ArtUploader < CarrierWave::Uploader::Base
   end
 
   version :thumb do
-    process :resize_to_fill => [300,200]
+    process :resize_to_fill => [600,400]
   end
 
 

@@ -3,16 +3,25 @@
 
 #logo {
   padding: 20px 0;
+  display: inline-block;
 }
-p#notice {
-  display:none;
+.new-mix {
+  left: 5px;
+  top: -15px;
+  z-index: 55;
 }
+//p#notice {
+//  display:none;
+//}
 .top-bar .name h1 a {
   font-size: 28px;
 }
 .top-bar .name h1 a span {
   font-size: 16px;
   color: #2ba6cb;
+}
+.breadcrumbs {
+  margin-top: 15px;
 }
 .track-list {
   list-style: none;
@@ -31,6 +40,10 @@ fieldset.art {
 }
 
 /* forms */
+.alert-box.radius {
+  -webkit-border-radius: 0 0 3px 3px;
+  border-radius: 0 0 3px 3px;
+}
 input[type='text'],
 input[type='email'],
 input[type='password'],
@@ -58,12 +71,7 @@ label[for='user_remember_me'] {
 .ui-hidden-accessible {
   display: none;
 }
-.new-mix {
-  position: absolute;
-  left: 180px;
-  top: 38px;
-  z-index: 55;
-}
+
 
 /* mixes */
 .mix-list article {
@@ -112,11 +120,19 @@ footer {
   margin-top: 50px;
   padding: 50px 0;
 }
+footer img {
+  display: block;
+}
 footer h4 {
   color: #fff;
+  float: left;
+  padding-left: 5px;
 }
 footer h5 {
   color: #2ba6cb;
+  line-height: 2;
+  padding-left: 5px;
+  display: inline-block;
 }
 
 

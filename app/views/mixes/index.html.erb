@@ -1,7 +1,3 @@
-<ul class="breadcrumbs">
-  <li class="unavailable"><%= link_to 'All Mixes', mixes_path %></li>
-</ul>
-
 <ul class="mix-list small-block-grid-2 large-block-grid-3">
 <% @mixes.each do |mix| %>
   <li>
@@ -12,7 +8,7 @@
         </header>
       </a>
     </article>
-    <% if user_signed_in? && (mix.user_id = current_user.id) %>
+    <% if user_signed_in? && (mix.user == current_user) %>
       <span><%= link_to 'Edit', edit_mix_path(mix) %></span>
       | <span><%= link_to 'Destroy', mix, method: :delete, data: { confirm: 'Are you sure?' } %></span>
     <% end %>

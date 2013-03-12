@@ -44,6 +44,7 @@ class MixesController < ApplicationController
 
     respond_to do |format|
       if @mix.save
+        current_user.mixes << @mix
         format.html { redirect_to @mix, notice: 'Mix was successfully created.' }
         format.json { render json: @mix, status: :created, location: @mix }
       else
@@ -80,4 +81,14 @@ class MixesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def sort
+    @mix = Mix.find(params[:id])
+    @mix.tracks.each do |track|
+      track.position = params['mix'].index(track.id.to_s) + 1
+      track.save
+    end
+    render :nothing => true
+  end
+  
 end
