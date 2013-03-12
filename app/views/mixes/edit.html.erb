@@ -1,6 +1,7 @@
-<h1>Editing mix</h1>
+<ul class="breadcrumbs">
+  <li><%= link_to 'All Mixes', mixes_path %></li>
+  <li><%= link_to @mix.title, mix_path(@mix) %></a></li>
+  <li class="unavailable"><a href="#">Editing mix</a></li>
+</ul>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @mix %> |
-<%= link_to 'Back', mixes_path %>

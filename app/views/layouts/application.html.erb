@@ -74,13 +74,6 @@
         </div>
       <% end %>
 
-      <div id="logo">
-        <%= image_tag('tape.jpg', :width => '200') %>  
-      </div>
-      <% if user_signed_in? %>
-        <%= link_to '+ New Mix', new_user_mix_path(current_user), :class => 'small button radius new-mix' %>
-      <% end %>
-
       <%= yield %>
 
     </div>
