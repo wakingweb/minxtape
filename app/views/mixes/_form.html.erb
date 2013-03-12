@@ -28,7 +28,7 @@
     <legend>Track Listing</legend>
     <!-- nested tracks form -->
     <%= f.fields_for :tracks do |track_form| %>
-      <%= track_form.text_field :name %>
+      <%= track_form.text_field :name, :placeholder => 'Track Name - Artist' %>
       <%= track_form.file_field :audio %>
       <%= track_form.link_to_remove "Remove this track" %>
     <% end %>
