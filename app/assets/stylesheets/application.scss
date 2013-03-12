@@ -19,8 +19,32 @@ p#notice {
   font-size: 24px;
   font-weight: 300;
 }
+h1 {
+  font-size: 30px;
+}
+fieldset {
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+fieldset.art {
+  margin-top: -7px;
+}
 
 /* forms */
+input[type='text'],
+input[type='email'],
+input[type='password'],
+textarea {
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  font-size: 1em;
+}
+input[type='text'] {
+  height: 40px;
+}
+textarea {
+  height: 70px;
+}
 input[type='file'] {
   margin: 5px 0 30px 0;
 }

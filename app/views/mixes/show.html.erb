@@ -65,8 +65,9 @@
 
   </div>
   <div class="large-6 columns">
-    <% if user_signed_in? && (@mix.user_id == current_user.id) %>
+    <% if user_signed_in? && (@mix.user_id = current_user.id) %>
       <%= link_to 'Edit', edit_mix_path(@mix), :class => "button radius" %>
+      <%= link_to 'Destroy', @mix, method: :delete, :class => "button radius alert", data: { confirm: 'Are you sure?' } %>
     <% end %>
   </div>
 </div>
