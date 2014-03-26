@@ -42,7 +42,8 @@
   $(document).ready(function() {
     new jPlayerPlaylist({
         jPlayer: "#jquery_jplayer_1",
-        cssSelectorAncestor: "#jp_container_1"
+        cssSelectorAncestor: "#jp_container_1",
+        solution:"flash,html"
       }, <%= tracklist.html_safe %>, {
         swfPath: "http://www.jplayer.org/2.1.0/js",
         supplied: "mp3"
