@@ -2,7 +2,7 @@
   <%= image_tag('tape.jpg', :width => '200') %>  
 </div>
 <% if user_signed_in? %>
-  <%= link_to '+ New Mix', new_user_mix_path(current_user), :class => 'small button radius new-mix' %>
+  <%= link_to '+ Create a Super Awesome Mix', new_user_mix_path(current_user), :class => 'small button radius new-mix' %>
 <% end %>
 
 <ul class="mix-list small-block-grid-2 large-block-grid-4">
