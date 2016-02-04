@@ -15,6 +15,8 @@ class MixesController < ApplicationController
   def show
     @mix = Mix.find(params[:id])
 
+    @tracks = @mix.tracks
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @mix }
