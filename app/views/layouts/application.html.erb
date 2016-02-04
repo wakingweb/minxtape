@@ -1,85 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title><%= content_for?(:title) ? yield(:title) : "MinxTape" %></title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "vendor/modernizr" %>
-  <%= yield :head %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <div class="contain-to-grid">
-    <nav class="top-bar">
-    <ul class="title-area">
-      <!-- Title Area -->
-      <li class="name">
-        <h1><a href="/">MinxTape</a> </h1>
-      </li>
-      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-    </ul>
+    <title><%= content_for?(:title) ? yield(:title) : "MinxTape" %></title> 
 
-    <section class="top-bar-section">
-      <!-- Right Nav Section -->
-      <ul class="right">
-        <% if user_signed_in? %>
-          <li class="divider hide-for-small"></li>
-          <li class="has-dropdown"><a href="#"><%= current_user.email %></a>
-            <ul class="dropdown">
-              <li>
-                <%= link_to('Edit profile', edit_user_registration_path) %>
-              </li>
-              <li>
-                <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
-              </li>
-            </ul>
-          </li>
-        <% else %>
-          <li class="divider show-for-small"></li>
-          <li class="has-form">
-            <%= link_to('Login', new_user_session_path, :class => "button radius")  %>  
-          </li>
-          <li class="has-form">
-            <%= link_to('Sign Up', new_user_registration_path, :class => "button radius")  %>  
-          </li>
-        <% end %>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application" 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <div class="contain-to-grid">
+      <nav class="top-bar">
+      <ul class="title-area">
+        <!-- Title Area -->
+        <li class="name">
+          <h1><a href="/">MinxTape</a> </h1>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
       </ul>
-    </section>
-  </nav>
-  </div>
-  <div class="row">
-    <div class="large-12 columns">
-      <% if notice %>
-        <div data-alert class="alert-box success radius">
-          <%= notice %>
-          <a href="#" class="close">&times;</a>
-        </div>
-      <% elsif alert %>
-        <div data-alert class="alert-box radius">
-          <%= alert %>
-          <a href="#" class="close">&times;</a>
-        </div>
-      <% end %>
 
-      <%= yield %>
-
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <% if user_signed_in? %>
+            <li class="divider hide-for-small"></li>
+            <li class="has-dropdown"><a href="#"><%= current_user.email %></a>
+              <ul class="dropdown">
+                <li>
+                  <%= link_to('Edit profile', edit_user_registration_path) %>
+                </li>
+                <li>
+                  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+                </li>
+              </ul>
+            </li>
+          <% else %>
+            <li class="divider show-for-small"></li>
+            <li class="has-form">
+              <%= link_to('Login', new_user_session_path, :class => "button radius")  %>  
+            </li>
+            <li class="has-form">
+              <%= link_to('Sign Up', new_user_registration_path, :class => "button radius")  %>  
+            </li>
+          <% end %>
+        </ul>
+      </section>
+    </nav>
     </div>
-  </div>
-  
-  <footer>
     <div class="row">
       <div class="large-12 columns">
-        <%= image_tag('tape-inverse.jpg', :width => '255') %>  
-        <h4>MinxTape</h4>
-        <h5>Spread the love.</h5>
+        <% if notice %>
+          <div data-alert class="alert-box success radius">
+            <%= notice %>
+            <a href="#" class="close">&times;</a>
+          </div>
+        <% elsif alert %>
+          <div data-alert class="alert-box radius">
+            <%= alert %>
+            <a href="#" class="close">&times;</a>
+          </div>
+        <% end %>
+
+        <%= yield %>
+
       </div>
     </div>
-  </footer>
-  
-  <%= javascript_include_tag "application" %>
-</body>
+    
+    <footer>
+      <div class="row">
+        <div class="large-12 columns">
+          <%= image_tag('tape-inverse.jpg', :width => '255') %>  
+          <h4>MinxTape</h4>
+          <h5>Spread the love.</h5>
+        </div>
+      </div>
+    </footer>
+
+  </body>
 </html>
