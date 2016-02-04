@@ -1,8 +1,13 @@
 <li>
-  <audio controls>
-    <source src="<%= track.audio.url %>" type="audio/mpeg">
-      Your browser does not support the audio element.
-  </audio>
-  <span class="title"><%= track.name %></span>
+  <div class="row">
+    <div class="medium-6 columns">
+      <span class="title"><%= track.name %></span>
+    </div>
+    <div class="medium-6 columns">
+      <audio controls preload="metadata">
+        <source src="<%= track.audio.url %>" type="audio/mpeg">
+          Your browser does not support the audio element.
+      </audio>
+    </div>
+  </div>
 </li>
-<!-- <li><%= track.audio.url %></li> -->

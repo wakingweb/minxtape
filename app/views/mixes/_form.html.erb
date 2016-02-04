@@ -17,10 +17,6 @@
         <%= f.label :title, :class => "ui-hidden-accessible" %>
         <%= f.text_field :title, :placeholder => 'Give it a name!' %>
       </div>
-      <div class="field">
-        <%= f.label :description, :class => "ui-hidden-accessible" %>
-        <%= f.text_area :description, :placeholder => 'Any thoughts about this mix?' %>
-      </div>
       <fieldset>
         <legend>Track Listing</legend>
         <!-- nested tracks form -->
@@ -29,7 +25,7 @@
           <%= track_form.file_field :audio %>
           <%= track_form.link_to_remove "Remove this track" %>
         <% end %>
-        <%= f.link_to_add "Add a track", :tracks, :class=>"small button radius add-a-track" %>
+        <%= f.link_to_add "Add a track", :tracks, class:"small button radius add-a-track" %>
       </fieldset>
     </div>
     <div class="large-6 columns">  
@@ -47,6 +43,11 @@
   
       <div class="actions">
         <%= f.submit 'Save Mix', :class=>"button radius success save-mix" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :description, :class => "ui-hidden-accessible" %>
+        <%= f.text_area :description, :placeholder => 'Any thoughts about this mix?' %>
       </div>
     </div>
   </div>

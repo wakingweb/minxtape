@@ -1,3 +1,41 @@
-// Place all the styles related to the Mixes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.mix-list article {
+  height: 100px;
+}
+.mix-list article {
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+article {
+  width: 100%;
+  height: 400px;
+  -webkit-border-radius: 5px 5px 0px 0px;
+  border-radius: 5px 5px 0px 0px;
+  background-size: cover;
+}
+article > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+article header {
+  padding: 5px;
+  background-color: rgba(0,0,0,0.5);
+  -webkit-border-radius: 5px 5px 0px 0px;
+  border-radius: 5px 5px 0px 0px;
+}
+article h1 {
+  display: inline-block;
+  color: #fff;
+  margin: 0;
+  padding: 5px;
+  font-weight: 900;
+  font-size: 26px;
+}
+article p {
+  font-size: 16px;
+  display: inline-block;
+  padding: 5px;
+  color: #fff;  
+  font-weight: 300;
+  margin-bottom: 5px;
+}

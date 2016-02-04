@@ -20,11 +20,6 @@
 .breadcrumbs {
   margin-top: 15px;
 }
-.track-list {
-  list-style: none;
-  font-size: 24px;
-  font-weight: 300;
-}
 h1 {
   font-size: 30px;
 }
@@ -68,76 +63,6 @@ label[for='user_remember_me'] {
 .ui-hidden-accessible {
   display: none;
 }
-
-
-/* mixes */
-.mix-list article {
-  height: 100px;
-}
-.mix-list article {
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-}
-article {
-  width: 100%;
-  height: 200px;
-  -webkit-border-radius: 5px 5px 0px 0px;
-  border-radius: 5px 5px 0px 0px;
-  background-size: cover;
-}
-article > a {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-article header {
-  padding: 5px;
-  background-color: rgba(0,0,0,0.5);
-  -webkit-border-radius: 5px 5px 0px 0px;
-  border-radius: 5px 5px 0px 0px;
-}
-article h1 {
-  display: inline-block;
-  color: #fff;
-  margin: 0;
-  padding: 5px;
-  font-weight: 900;
-  font-size: 26px;
-}
-article p {
-  font-size: 16px;
-  display: inline-block;
-  padding: 5px;
-  color: #fff;  
-  font-weight: 300;
-  margin-bottom: 5px;
-}
-
-
-/* footer */
-footer {
-  width: 100%;
-  background: #000;
-  margin-top: 50px;
-  padding: 50px 0;
-}
-footer img {
-  display: block;
-}
-footer h4 {
-  color: #fff;
-  float: left;
-  padding-left: 5px;
-  font-size: 1.4375em;
-  line-height: 32px;
-}
-footer h5 {
-  color: #2ba6cb;
-  line-height: 2;
-  padding-left: 5px;
-  display: inline-block;
-}
-
 
 /* LARGE */
 @media only screen and (min-width: 48em) {

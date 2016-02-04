@@ -1,7 +1,4 @@
 <% content_for :title, @mix.title + ' | MinxTape' %>
-<% content_for :head do %>
-  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js", "jquery.jplayer.min", "jplayer.playlist.min" %>
-<% end %>
 
 <ul class="breadcrumbs">
   <li><%= link_to 'All Mixes', mixes_path %></li>
@@ -9,44 +6,21 @@
 </ul>
 
 <div class="row">
-  <div class="large-6 columns">
+  <div class="large-10 columns">
     <article style="background-image: url(<%= @mix.art.thumb %>);">
       <header>
         <h1><%= @mix.title %></h1>
         <p><%= @mix.description %></p>
       </header>
+      <ul class="track-list">
+        <%= render @tracks %>
+      </ul>
     </article>
-
-    <%= render 'player' %>
-
   </div>
-  <div class="large-6 columns">
+  <div class="large-2 columns">
     <% if user_signed_in? && (@mix.user == current_user) %>
       <%= link_to 'Edit', edit_mix_path(@mix), :class => "button radius" %>
       <%= link_to 'Destroy', @mix, method: :delete, :class => "button radius alert", data: { confirm: 'Are you sure?' } %>
     <% end %>
   </div>
 </div>
-
-<% 
-  # generate tracklist for javascript
-  tracklist = '';
-  @mix.tracks.each do |t|
-    tracklist += "{ title:\"" + t.name + "\", mp3:\"" + t.audio.url + "\"}, "
-  end
-  tracklist = '[' + tracklist.chomp(', ') + ']';
-%>
-
-
-<% content_for :javascripts do %>
-  $(document).ready(function() {
-    new jPlayerPlaylist({
-        jPlayer: "#jquery_jplayer_1",
-        cssSelectorAncestor: "#jp_container_1",
-        solution:"flash,html"
-      }, <%= tracklist.html_safe %>, {
-        swfPath: "http://www.jplayer.org/2.1.0/js",
-        supplied: "mp3"
-      });
-  });
-<% end %>
