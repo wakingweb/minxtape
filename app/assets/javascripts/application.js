@@ -12,7 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery_nested_form
 //= require foundation
+//= require jquery_nested_form
 //= require_self
-$(document).foundation();
+
+$(function(){ $(document).foundation(); });

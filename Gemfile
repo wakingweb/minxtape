@@ -1,18 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.12'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-group :development do
-  gem 'sqlite3'
-end
-
-group :production do
-  gem 'pg'
-end
-
+gem 'rails', '3.2.22.1'
+gem 'pg'
+gem 'puma'
 gem 'devise'
 gem 'carrierwave'
 gem 'acts_as_list'
@@ -23,16 +13,10 @@ gem "nested_form"
 gem "mini_magick"
 gem "sass"
 
-
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3'
-  # foundation
-  gem 'zurb-foundation', '~> 4.0.4'
-end
+gem 'sass-rails',   '~> 3.2.3'
+gem 'coffee-rails', '~> 3.2.1'
+gem 'uglifier', '>= 1.0.3'
+gem 'foundation-rails'
 
 gem 'jquery-rails'
 

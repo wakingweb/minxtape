@@ -1,10 +1,11 @@
-Rails.env.production? ? (bucket_name = "minxtape") : (bucket_name = "minxtape-dev")
+Rails.env.production? ? (bucket_name = "minxtape-production") : (bucket_name = "minxtape-development")
 
 CarrierWave.configure do |config|
   config.fog_credentials = {
-    :provider               => 'AWS',                                       # required
-    :aws_access_key_id      => 'AKIAJRNZ6KCCVABGARPQ',                      # required
-    :aws_secret_access_key  => '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'   # required
+    provider:              'AWS',                                       # required
+    aws_access_key_id:     'AKIAIC2NAMMXMCERT24A',                      # required
+    aws_secret_access_key: '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',  # required
+    region:                'us-west-2',
   }
   config.fog_directory  = bucket_name                                       # required
 end
