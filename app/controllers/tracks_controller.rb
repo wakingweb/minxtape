@@ -83,4 +83,17 @@ class TracksController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+private
+
+  def track_params
+    params.require(:track).permit(
+      :id,
+      :mix_id, 
+      :artist,
+      :name,
+      :audio,
+      :position,
+    )
+  end
 end

@@ -21,8 +21,8 @@
   </div>
   <div class="large-4 columns">
     <% if user_signed_in? && (@mix.user == current_user) %>
-      <%= link_to 'Edit', edit_mix_path(@mix), class: "button radius" %>
-      <%= link_to 'Destroy', @mix, method: :delete, class: "button radius alert", data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'Edit', edit_mix_path(@mix), class: "button " %>
+      <%= link_to 'Destroy', @mix, method: :delete, class: "button alert", data: { confirm: "Are you sure?" } %>
     <% end %>
   </div>
 </div>

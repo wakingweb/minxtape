@@ -1,9 +1,11 @@
 @import '_settings';
 
-.mix-list article {
-  height: 175px;
-  -webkit-border-radius: $global-radius;
-  border-radius: $global-radius;
+.mix-list {
+  article {
+    height: 175px;
+    -webkit-border-radius: $global-radius;
+    border-radius: $global-radius;
+  }
 }
 article {
   width: 100%;
@@ -25,7 +27,7 @@ article header {
 }
 article h1 {
   display: inline-block;
-  color: #fff;
+  color: $white;
   margin: 0;
   padding: 5px;
   font-weight: 900;
@@ -34,10 +36,7 @@ article h1 {
 article p {
   font-size: 16px;
   display: inline-block;
-  padding: 5px;
-  color: #fff;  
-  font-weight: 300;
-  margin-bottom: 5px;
+  color: $white;  
 }
 .mix-actions {
   margin-left: 0.5em;
@@ -48,3 +47,13 @@ article p {
     float: left;
   }
 }
+
+#nested-tracks-form {
+  .input-group {
+    margin-bottom: 0.4rem;
+    .fi-list:hover {
+      cursor: move;
+    }
+  }
+}
+

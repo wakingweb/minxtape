@@ -2,18 +2,16 @@ class MixesController < ApplicationController
 
   before_filter :set_mix, except: [:index, :new, :create]
   before_filter :authenticate_user!, except: [:index, :show]
+  before_filter :sort, only: :update
 
-  respond_to :json, only: [:sort, :add_track]
+  respond_to :html, :json
 
   # GET /mixes
   # GET /mixes.json
   def index
     @mixes = Mix.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @mixes }
-    end
+    respond_with @mixes
   end
 
   # GET /mixes/1
@@ -21,10 +19,7 @@ class MixesController < ApplicationController
   def show
     @tracks = @mix.tracks
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @mix }
-    end
+    respond_with @mix
   end
 
   # GET /mixes/new
@@ -34,10 +29,7 @@ class MixesController < ApplicationController
 
     @mix.tracks.build
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @mix }
-    end
+    respond_with @mix
   end
 
   # GET /mixes/1/edit
@@ -85,19 +77,25 @@ class MixesController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
   def sort
     @mix.tracks.each do |track|
-      track.position = params[:mix].index(track.id.to_s) + 1
-      track.save
+      track.update_attribute :position, track_positions.index(track.id.to_s) + 1
     end
-    render :nothing => true
   end
 
 private
 
   def set_mix
     @mix = Mix.find(params[:id])
+  end
+
+  def track_positions
+    arr = Array.new
+    params[:mix][:tracks_attributes].to_a.each do |hash|
+      arr.push(hash[1]["id"])
+    end
+    arr
   end
 
   def mix_params
@@ -107,6 +105,8 @@ private
       :description,
       :user_id,
       :art,
+      :art_cache,
+      :remove_art,
       tracks_attributes: [
         :id, 
         :name, 

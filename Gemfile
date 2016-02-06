@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 4.0.0'
+gem 'rails', '~> 4.2.5.1'
 gem 'pg'
 gem 'puma'
 gem 'devise'
@@ -18,6 +18,7 @@ gem 'foundation-rails'
 gem 'test-unit'
 gem 'jquery-rails'
 gem 'nested_form_fields'
+gem 'responders', '~> 2.0'
 
 # upgrade helpers
 gem 'protected_attributes' # https://github.com/rails/protected_attributes
@@ -30,6 +31,8 @@ gem 'rails_12factor', group: :production
 
 group :development do
   gem 'foreman'
+  gem 'spring'
+  gem 'web-console', '~> 2.0'
 end
 
 group :development, :test do

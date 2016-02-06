@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require foundation
 //= require nested_form_fields
+//= require sortable.min
 //= require mixes
 //= require_self
 

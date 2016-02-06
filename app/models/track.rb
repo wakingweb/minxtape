@@ -1,5 +1,6 @@
 class Track < ActiveRecord::Base
-  attr_accessible :mix_id, :artist, :name, :audio, :position
+  include ActiveModel::ForbiddenAttributesProtection
+
   belongs_to :mix
 
   acts_as_list scope: :mix
