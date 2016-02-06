@@ -1,3 +1,6 @@
+@import 'util/util';
+@import '_settings';
+
 #logo {
   padding: 20px 0;
   display: inline-block;
@@ -7,18 +10,24 @@
   top: -15px;
   z-index: 55;
 }
-.top-bar .name h1 a {
-  font-size: 28px;
+nav.top-bar {
+  .top-bar-title-link {
+    color: $black;
+    font-size: 1.475em;
+    font-weight: 900;
+  }
+  .top-bar-login-link {
+    margin-right: 0.5em;
+  }
 }
-.top-bar .name h1 a span {
-  font-size: 16px;
-  color: #2ba6cb;
+#responsive-menu .menu li {
+  padding-right: 0.5em;
+  &:last-child {
+    padding-right: 0;
+  }
 }
-.breadcrumbs {
+nav .breadcrumbs {
   margin-top: 15px;
-}
-h1 {
-  font-size: 30px;
 }
 fieldset {
   -webkit-border-radius: 5px;
@@ -61,17 +70,29 @@ label[for='user_remember_me'] {
   display: none;
 }
 
-/* LARGE */
-@media only screen and (min-width: 48em) {
-  
+@include breakpoint(large) {
   .mix-list article {
     height: 200px;
   }  
   article {
     height: 250px;
   }
-  
   .jp-audio {
     width: auto;
+  }
+}
+
+@include breakpoint(medium) {
+
+}
+
+@include breakpoint(small down) {
+  .top-bar {
+    .top-bar-title-link {
+      padding-left: 0.3em;
+    }
+  }
+  .menu-icon {
+    top: -4px;  
   }
 }

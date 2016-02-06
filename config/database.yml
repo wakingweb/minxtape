@@ -2,3 +2,8 @@ development:
   adapter: postgresql
   host: localhost
   database: minxtape-dev
+
+test:
+  adapter: postgresql
+  host: localhost
+  database: minxtape-test

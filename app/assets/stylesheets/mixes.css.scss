@@ -1,15 +1,15 @@
+@import '_settings';
+
 .mix-list article {
-  height: 100px;
-}
-.mix-list article {
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
+  height: 175px;
+  -webkit-border-radius: $global-radius;
+  border-radius: $global-radius;
 }
 article {
   width: 100%;
-  height: 400px;
-  -webkit-border-radius: 5px 5px 0px 0px;
-  border-radius: 5px 5px 0px 0px;
+  height: 500px;
+  -webkit-border-radius: $global-radius;
+  border-radius: $global-radius;
   background-size: cover;
 }
 article > a {
@@ -38,4 +38,13 @@ article p {
   color: #fff;  
   font-weight: 300;
   margin-bottom: 5px;
+}
+.mix-actions {
+  margin-left: 0.5em;
+  margin-top: 0.5em;
+  list-style: none;
+  li {
+    padding-right: 0.5em;
+    float: left;
+  }
 }

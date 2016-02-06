@@ -1,4 +1,10 @@
 class MixesController < ApplicationController
+
+  before_filter :set_mix, except: [:index, :new, :create]
+  before_filter :authenticate_user!, except: [:index, :show]
+
+  respond_to :json, only: [:sort, :add_track]
+
   # GET /mixes
   # GET /mixes.json
   def index
@@ -13,8 +19,6 @@ class MixesController < ApplicationController
   # GET /mixes/1
   # GET /mixes/1.json
   def show
-    @mix = Mix.find(params[:id])
-
     @tracks = @mix.tracks
 
     respond_to do |format|
@@ -28,6 +32,8 @@ class MixesController < ApplicationController
   def new
     @mix = Mix.new
 
+    @mix.tracks.build
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @mix }
@@ -36,7 +42,6 @@ class MixesController < ApplicationController
 
   # GET /mixes/1/edit
   def edit
-    @mix = Mix.find(params[:id])
   end
 
   # POST /mixes
@@ -59,8 +64,6 @@ class MixesController < ApplicationController
   # PUT /mixes/1
   # PUT /mixes/1.json
   def update
-    @mix = Mix.find(params[:id])
-
     respond_to do |format|
       if @mix.update_attributes(params[:mix])
         format.html { redirect_to @mix, notice: 'Mix was successfully updated.' }
@@ -75,7 +78,6 @@ class MixesController < ApplicationController
   # DELETE /mixes/1
   # DELETE /mixes/1.json
   def destroy
-    @mix = Mix.find(params[:id])
     @mix.destroy
 
     respond_to do |format|
@@ -85,12 +87,36 @@ class MixesController < ApplicationController
   end
   
   def sort
-    @mix = Mix.find(params[:id])
     @mix.tracks.each do |track|
-      track.position = params['mix'].index(track.id.to_s) + 1
+      track.position = params[:mix].index(track.id.to_s) + 1
       track.save
     end
     render :nothing => true
   end
-  
+
+private
+
+  def set_mix
+    @mix = Mix.find(params[:id])
+  end
+
+  def mix_params
+    params.require(:mix).permit(
+      :id,
+      :title, 
+      :description,
+      :user_id,
+      :art,
+      tracks_attributes: [
+        :id, 
+        :name, 
+        :artist, 
+        :mix_id, 
+        :audio, 
+        :position, 
+        :_destroy
+      ]
+    )
+  end
+
 end

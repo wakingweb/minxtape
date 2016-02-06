@@ -1,7 +1,11 @@
-<ul class="breadcrumbs">
-  <li><%= link_to 'All Mixes', mixes_path %></li>
+<% content_for :breadcrumbs do %>
+  <li><%= link_to "All Mixes", mixes_path %></li>
   <li><%= link_to @mix.title, mix_path(@mix) %></a></li>
-  <li class="unavailable"><a href="#">Editing mix</a></li>
-</ul>
+  <li class="disabled">
+    <span class="show-for-sr">Current: </span> Editing mix
+  </li>
+<% end %>
 
-<%= render 'form' %>
+<%= render "form" %>
+
+<%= link_to "Back", mixes_path, class: "button" %>

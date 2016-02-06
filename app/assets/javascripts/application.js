@@ -13,7 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require jquery_nested_form
+//= require nested_form_fields
+//= require mixes
 //= require_self
 
 $(function(){ $(document).foundation(); });

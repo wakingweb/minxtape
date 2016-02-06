@@ -14,4 +14,5 @@ Here are some high priority improvements I plan to implement:
 * Auto-play next track (behave like a tape would)
 * Global volume control, hide volume from html5 audio controls
 * Auto-fill "Song - Artists" from  uploaded file metadata
+* Add basic rails test suite
 

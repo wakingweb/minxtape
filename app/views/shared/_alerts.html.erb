@@ -1,0 +1,15 @@
+<% if notice %>
+  <div class="success callout" data-closable>
+    <h5><%= notice %></h5>
+    <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% elsif alert %>
+  <div class="alert callout" data-closable>
+    <h5><%= alert %></h5>
+    <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% end %>

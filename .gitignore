@@ -16,3 +16,4 @@
 /public/uploads/tmp
 /_dev
 .DS_Store
+.ruby-version

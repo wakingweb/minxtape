@@ -1,4 +1,4 @@
-<%= nested_form_for @mix, :html => {:multipart => true} do |f| %>
+<%= form_for @mix, :html => {:multipart => true} do |f| %>
   <% if @mix.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@mix.errors.count, "error") %> prohibited this mix from being saved:</h2>
@@ -12,42 +12,40 @@
   <% end %>
 
   <div class="row">
-    <div class="large-6 columns">
+    <div class="medium-6 columns">
       <div class="field">
-        <%= f.label :title, :class => "ui-hidden-accessible" %>
-        <%= f.text_field :title, :placeholder => 'Give it a name!' %>
+        <%= f.label :title, class: "ui-hidden-accessible" %>
+        <%= f.text_field :title, placeholder: "Give it a name!" %>
       </div>
-      <fieldset>
+      <fieldset class="fieldset">
         <legend>Track Listing</legend>
-        <!-- nested tracks form -->
-        <%= f.fields_for :tracks do |track_form| %>
-          <%= track_form.text_field :name, :placeholder => 'Song - Artist' %>
-          <%= track_form.file_field :audio %>
-          <%= track_form.link_to_remove "Remove this track" %>
-        <% end %>
-        <%= f.link_to_add "Add a track", :tracks, class:"small button radius add-a-track" %>
+        <div id="nested-tracks-form">
+          <%= f.nested_fields_for :tracks do |track_form| %>
+            <%= render "track", track_form: track_form %>
+          <% end %>
+        </div>
+        <%= f.add_nested_fields_link :tracks, "Add a track", class: "button success" %>
       </fieldset>
+      <div class="field">
+        <%= f.label :description, class: "ui-hidden-accessible" %>
+        <%= f.text_area :description, placeholder: "Any thoughts about this mix?" %>
+      </div>
     </div>
-    <div class="large-6 columns">  
-      <fieldset class="art">
+    <div class="medium-6 columns">  
+      <fieldset class="fieldset art">
         <legend>Artwork</legend>
         <div class="field">
           <%= image_tag(@mix.art.thumb) if @mix.art? %>
         </div>
         <div class="field">
-          <%= f.label :art, 'Upload Artwork', :class => 'ui-hidden-accessible' %>    
+          <%= f.label :art, "Upload Artwork", class: "ui-hidden-accessible" %>    
           <%= f.file_field :art %>
           <%= f.hidden_field :art_cache %>
         </div>
       </fieldset>
   
       <div class="actions">
-        <%= f.submit 'Save Mix', :class=>"button radius success save-mix" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :description, :class => "ui-hidden-accessible" %>
-        <%= f.text_area :description, :placeholder => 'Any thoughts about this mix?' %>
+        <%= f.submit "Save Mix", class: "button radius success save-mix" %>
       </div>
     </div>
   </div>
