@@ -19,6 +19,7 @@ gem 'test-unit'
 gem 'jquery-rails'
 gem 'nested_form_fields'
 gem 'responders', '~> 2.0'
+gem 'figaro'
 
 # upgrade helpers
 gem 'protected_attributes' # https://github.com/rails/protected_attributes
@@ -36,11 +37,9 @@ group :development do
 end
 
 group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+  gem 'capybara'
   gem 'pry'
-end
-
-group :test do
-  gem 'rspec'
 end
 
 ruby '2.0.0'
