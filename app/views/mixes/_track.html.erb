@@ -1,10 +1,16 @@
 <div class="track-input">
   <div class="input-group">
-    <span class="input-group-label fi-list"></span>
+    <span class="input-group-label fi-list"></span>    
     <%= track_form.text_field :name, placeholder: "Song - Artist", class: "input-group-field" %>
     <div class="input-group-button">
-      <%= track_form.remove_nested_fields_link "remove", class: "button alert" %>
+      <%= track_form.remove_nested_fields_link '<span class="fi-trash small"></span>'.html_safe, class: "button alert" %>
     </div>
   </div>
-  <%= track_form.file_field :audio %>
+  <% if track_form.object.audio.blank? %>
+    <%= track_form.label :audio, '<span class="fi-upload-cloud"></span> Upload File (or drop here)'.html_safe, class: "small button dropzone success" %>
+  <% else %>
+    <%= track_form.label :audio, '<span class="fi-upload-cloud"></span> Change File (or drop here)'.html_safe, class: "small button dropzone" %>
+  <% end %>
+  <%= track_form.file_field :audio, class: "show-for-sr" %>
 </div>
+

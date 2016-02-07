@@ -41,33 +41,8 @@ fieldset.art {
 }
 
 /* forms */
-// input[type='text'] {
-//   height: 40px;
-// }
-// textarea {
-//   height: 70px;
-// }
-// input[type='file'] {
-//   margin: 5px 0 30px 0;
-// }
-// #user_remember_me {
-//   display: inline;
-// }
-// label[for='user_remember_me'] {
-//   display: inline-block;
-//   padding-bottom: 20px;
-// }
 .ui-hidden-accessible {
   display: none;
-}
-
-@include breakpoint(large) {
-  .mix-list article {
-    height: 200px;
-  }  
-  article {
-    height: 250px;
-  }
 }
 
 @include breakpoint(medium) {

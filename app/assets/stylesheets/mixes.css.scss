@@ -9,7 +9,7 @@
 }
 article {
   width: 100%;
-  height: 500px;
+  min-height: 500px;
   -webkit-border-radius: $global-radius;
   border-radius: $global-radius;
   background-size: cover;
@@ -55,5 +55,27 @@ article p {
       cursor: move;
     }
   }
+  .remove_nested_fields_link {
+    height: 40px;
+  }
 }
 
+.dropzone {
+  width: 100%;
+  color: $black;
+  border-color: #89c4f4;
+  background-color: #b8dcf8;
+  &.success {
+    border-color: #87d37c;
+    background-color: #b7e5b0;
+  }
+}
+
+@include breakpoint(large) {
+  .mix-list article {
+    height: 200px;
+  }  
+  article {
+    min-height: 250px;
+  }
+}
