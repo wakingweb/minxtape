@@ -1,4 +1,4 @@
-# MinxTape <sup>[http://minxtape.herokuapp.com](http://minxtape.herokuapp.com)</sup>
+# MinxTape <sup>[http://minxtape.com](http://minxtape.com)</sup>
 
 Mix Tapes.  Remixed.
 

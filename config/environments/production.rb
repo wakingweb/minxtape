@@ -66,7 +66,7 @@ Minxtape::Application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method   = :postmark
   config.action_mailer.postmark_settings = { :api_key => ENV['POSTMARK_API_TOKEN'] }
-  config.action_mailer.default_url_options = { :host => 'minxtape.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'minxtape.com' }
 
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
