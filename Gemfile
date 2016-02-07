@@ -4,6 +4,8 @@ gem 'rails', '~> 4.2.5.1'
 gem 'pg'
 gem 'puma'
 gem 'devise'
+gem 'mail'
+gem 'postmark'
 gem 'carrierwave'
 gem 'acts_as_list'
 gem 'dalli'
@@ -31,6 +33,7 @@ gem 'rails-observers' # https://github.com/rails/rails-observers
 gem 'rails_12factor', group: :production
 
 group :development do
+  gem 'letter_opener_web', '~> 1.2.0'
   gem 'foreman'
   gem 'spring'
   gem 'web-console', '~> 2.0'
