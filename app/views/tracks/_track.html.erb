@@ -1,10 +1,10 @@
-<li>
+<li id="minxtape-track-<%= track.position %>">
   <div class="row">
     <div class="medium-6 columns">
       <span class="title"><%= track.name %></span>
     </div>
     <div class="medium-6 columns">
-      <audio controls preload="metadata">
+      <audio controls preload="metadata" class="minxtape-track" data-position="<%= track.position %>">
         <source src="<%= track.audio.url %>" type="audio/mpeg">
           Your browser does not support the audio element.
       </audio>

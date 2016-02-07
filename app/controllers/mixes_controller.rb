@@ -39,7 +39,7 @@ class MixesController < ApplicationController
   # POST /mixes
   # POST /mixes.json
   def create
-    @mix = Mix.new(params[:mix])
+    @mix = Mix.new(mix_params)
 
     respond_to do |format|
       if @mix.save
@@ -57,7 +57,7 @@ class MixesController < ApplicationController
   # PUT /mixes/1.json
   def update
     respond_to do |format|
-      if @mix.update_attributes(params[:mix])
+      if @mix.update_attributes(mix_params)
         format.html { redirect_to @mix, notice: 'Mix was successfully updated.' }
         format.json { head :no_content }
       else
