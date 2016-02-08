@@ -9,6 +9,11 @@
     <%= stylesheet_link_tag "application" %>
     <link href="//cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <script type="text/javascript">
+      if (window.location.hash && window.location.hash == '#_=_') {
+          window.location.hash = '';
+      }
+    </script>
     <%= csrf_meta_tags %>
   </head>
 
