@@ -1,4 +1,4 @@
-Rails.env.production? ? (bucket_name = "minxtape-production") : (bucket_name = "minxtape-production")
+Rails.env.production? ? (bucket_name = "minxtape-production") : (bucket_name = "minxtape-development")
 
 CarrierWave.configure do |config|
   config.fog_credentials = {
