@@ -9,7 +9,6 @@
 }
 article {
   width: 100%;
-  min-height: 500px;
   -webkit-border-radius: $global-radius;
   border-radius: $global-radius;
   background-size: cover;
@@ -73,9 +72,9 @@ article p {
 
 @include breakpoint(large) {
   .mix-list article {
-    height: 200px;
+    min-height: 200px;
   }  
   article {
-    min-height: 250px;
+    min-height: 500px;
   }
 }
