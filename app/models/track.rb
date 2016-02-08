@@ -5,4 +5,8 @@ class Track < ActiveRecord::Base
 
   acts_as_list scope: :mix
   mount_uploader :audio, AudioUploader
+
+  def filename
+    File.basename(audio.path)
+  end
 end

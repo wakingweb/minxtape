@@ -38,12 +38,7 @@
           <%= image_tag(@mix.art.thumb) if @mix.art? %>
         </div>
         <div class="field">
-          <% if f.object.art.blank? %>
-            <%= f.label :art, '<span class="fi-upload-cloud"></span> Upload Artwork (drop file here)'.html_safe, class: "small button dropzone success" %>
-          <% else %>
-            <%= f.label :art, '<span class="fi-upload-cloud"></span> Change Artwork (drop file here)'.html_safe, class: "small button dropzone" %>
-          <% end %>
-          <%= f.file_field :art, class: "show-for-sr" %>    
+          <%= f.file_field :art %>    
           <%= f.hidden_field :art_cache %>
         </div>
       </fieldset>

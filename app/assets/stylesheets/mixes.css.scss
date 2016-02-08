@@ -54,19 +54,8 @@ article p {
       cursor: move;
     }
   }
-  .remove_nested_fields_link {
+  .input-group-button a {
     height: 40px;
-  }
-}
-
-.dropzone {
-  width: 100%;
-  color: $black;
-  border-color: #89c4f4;
-  background-color: #b8dcf8;
-  &.success {
-    border-color: #87d37c;
-    background-color: #b7e5b0;
   }
 }
 
