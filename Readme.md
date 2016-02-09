@@ -17,9 +17,12 @@ This is a project inspired by the old [Muxtape](http://muxtape.tumblr.com/) proj
 
 Here are some high priority improvements I'm working on:
 
-* Fix auto-play next track on mobile (must be user initiated click)
 * Global play/pause/volume control, hide html5 audio components
+* Skip to track by clicking on track name
 * Auto-fill "Song - Artists" from  uploaded file metadata
+* Add username to user profiles
+* Show who each mix was created by
+* Add "My Mixes" page only showing current_user mixes
 
 ## License
 

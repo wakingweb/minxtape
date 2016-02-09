@@ -7,23 +7,21 @@
   </li>
 <% end %>
 
+<div class="audio-player">
+  <audio controls preload="metadata" id="minxtape-player" data-position="1">
+    <source src="<%= @tracks.first.audio.url %>" type="audio/mpeg">
+      Your browser does not support the audio element.
+  </audio>
+</div>
+
 <article style="background-image: url(<%= @mix.art.thumb %>);" class="mix">
   <header>
     <h1><%= @mix.title %></h1>
     <p><%= @mix.description %></p>
   </header>
-  <div class="row">
-    <div class="medium-6 medium-push-6 columns">
-      <div class="audio-player">
-        <%= render partial: "player", collection: @tracks, as: :track %>
-      </div>
-    </div>
-    <div class="medium-6 medium-pull-6 columns">
-      <ul class="track-list">
-        <%= render @tracks %>
-      </ul>
-    </div>
-  </div>
+  <ul class="track-list">
+    <%= render @tracks %>
+  </ul>
   <div class="overlay"></div>
 </article>
 

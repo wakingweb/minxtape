@@ -57,7 +57,12 @@ article.mix {
     padding: 1em;
   }
   .track-list li {
-    font-size: 1.25em;
+    padding: 0.2em 0;
+    font-size: 0.875em;
+    color: $white;
+    a {
+      color: $white;
+    }
   }
 }
 
@@ -96,5 +101,8 @@ article.mix {
   }
   article {
     min-height: 500px;
+  }
+  .track-list li {
+    font-size: 1.25em;
   }
 }
