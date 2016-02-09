@@ -1,16 +1,21 @@
-<div id="logo">
-  <%= image_tag("tape.jpg", width: "270") %>  
+<div class="row small-up-2 medium-up-3 large-up-4 pad">
+  <div class="column">
+    <%= image_tag "tape.jpg" %>
+  </div>
+  <div class="column">
+    <% if user_signed_in? %>
+      <%= link_to "+ Create a Super Awesome Mix", new_user_mix_path(current_user), class: "button new-mix success" %>
+    <% elsif %>
+      <p>A new way to share music.</p>
+      <p><%= link_to "Log in", new_user_session_path %> or <%= link_to "Sign up", new_user_registration_path %> to make some minxtapes from your own music files.</p>
+    <% end %>
+  </div>
 </div>
-<% if user_signed_in? %>
-  <%= link_to "+ Create a Super Awesome Mix", new_user_mix_path(current_user), class: "button new-mix success" %>
-<% elsif %>
-  Log in to make some mix tapes.
-<% end %>
 
 <div class="row small-up-2 medium-up-3 large-up-4 mix-list">
   <% @mixes.each do |mix| %>
     <div class="column">
-      <article style="background-image: url(<%= mix.art.thumb %>);">
+      <article style="background-image: url(<%= mix.art.thumb %>);" class="mix">
         <a href="<%= mix_path(mix) %>">
           <header>
             <h1><%= mix.title %></h1>

@@ -17,9 +17,8 @@ This is a project inspired by the old [Muxtape](http://muxtape.tumblr.com/) proj
 
 Here are some high priority improvements I'm working on:
 
-* Show only one audio element at a time
-* Fix auto-play next track on mobile browsers
-* Global volume control, hide volume from html5 audio controls
+* Fix auto-play next track on mobile (must be user initiated click)
+* Global play/pause/volume control, hide html5 audio components
 * Auto-fill "Song - Artists" from  uploaded file metadata
 
 ## License

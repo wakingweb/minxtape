@@ -8,6 +8,9 @@
 .main-content {
   margin-top: 1em;
 }
+.row.pad {
+  padding: 2em 0;
+}
 .hidden {
   display: none;
 }
@@ -21,9 +24,6 @@ nav.top-bar {
     color: $black;
     font-size: 1.475em;
     font-weight: 900;
-  }
-  .top-bar-login-link {
-    margin-right: 0.5em;
   }
 }
 #responsive-menu .menu li {
