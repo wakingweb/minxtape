@@ -8,22 +8,25 @@ document.addEventListener 'DOMContentLoaded', ->
       animation: 150
 
   # minxtape player
-  document.getElementById("minxtape-player").addEventListener 'ended', ->
-    nextPosition = parseInt(this.dataset.position) + 1
-    nextTrack = document.getElementById("minxtape-track-#{nextPosition}")
-    this.children[0].src = nextTrack.dataset.source
-    this.dataset.position = nextPosition
-    this.load()
-    this.play()
-
-  document.getElementById("minxtape-player").addEventListener 'play', ->
-    currentPosition = parseInt(this.dataset.position)
-    currentTrackIndicator = document.getElementById("minxtape-track-indicator-#{currentPosition}")
-    currentTrackIndicator.style.display = ''
-    prevPosition = parseInt(this.dataset.position) - 1
-    prevTrackIndicator = document.getElementById("minxtape-track-indicator-#{prevPosition}")
-    if prevTrackIndicator
-      prevTrackIndicator.style.display = 'none'
+  el = document.getElementById("minxtape-player")
+  if el
+    # load and play next track when playback of current track ends
+    el.addEventListener 'ended', ->
+      nextPosition = parseInt(this.dataset.position) + 1
+      nextTrack = document.getElementById("minxtape-track-#{nextPosition}")
+      this.children[0].src = nextTrack.dataset.source
+      this.dataset.position = nextPosition
+      this.load()
+      this.play()
+    # update current track indicator
+    el.addEventListener 'play', ->
+      currentPosition = parseInt(this.dataset.position)
+      currentTrackIndicator = document.getElementById("minxtape-track-indicator-#{currentPosition}")
+      currentTrackIndicator.style.display = ''
+      prevPosition = parseInt(this.dataset.position) - 1
+      prevTrackIndicator = document.getElementById("minxtape-track-indicator-#{prevPosition}")
+      if prevTrackIndicator
+        prevTrackIndicator.style.display = 'none'
 
   # show audio uploader when track edit button clicked
   [].forEach.call document.getElementsByClassName('edit-audio-file'), (v,i,a) ->
