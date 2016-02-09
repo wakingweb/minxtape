@@ -57,6 +57,13 @@ article p {
   .input-group-button a {
     height: 40px;
   }
+  .audio-file-upload-field {
+    background-color: lighten($warning-color, 30%);
+    border: dashed 4px $warning-color;
+    padding: 5.5px;
+    border-radius: $global-radius 0 0 $global-radius;
+    margin: 0;
+  }
 }
 
 @include breakpoint(large) {

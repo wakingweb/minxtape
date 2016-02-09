@@ -3,6 +3,8 @@
 </div>
 <% if user_signed_in? %>
   <%= link_to "+ Create a Super Awesome Mix", new_user_mix_path(current_user), class: "button new-mix success" %>
+<% elsif %>
+  Log in to make some mix tapes.
 <% end %>
 
 <div class="row small-up-2 medium-up-3 large-up-4 mix-list">

@@ -3,14 +3,16 @@
     <span class="input-group-label fi-list"></span>    
     <%= track_form.text_field :name, placeholder: "Song - Artist", class: "input-group-field" %>
     <div class="input-group-button">
-      <%= track_form.remove_nested_fields_link '<span class="fi-trash small"></span>'.html_safe, class: "alert button", id: "mix-track-remove-#{track_form.object.id}", style: "#{ 'display: none' unless track_form.object.audio.blank? }" %>
-      <%= link_to "Edit", "#", class: "button edit-mix-track-file", data: { target: track_form.object.id }, style: "#{ 'display: none' if track_form.object.audio.blank? }" %>
+      <%= link_to 'Cancel', "#", class: "alert button cancel-edit-audio-file", id: "cancel-edit-audio-file-#{track_form.object.id}", data: { target: track_form.object.id }, style: "display: none" %>
+      <%= link_to "Edit", "#", class: "button edit-audio-file", id: "edit-audio-file-#{track_form.object.id}", style: "#{ 'display: none' if track_form.object.audio.blank? }", data: { target: track_form.object.id } %>
     </div>
   </div>
-  <% if track_form.object.audio.blank? %>
-    <%= track_form.file_field :audio %>
-  <% else %>
-    <%= track_form.file_field :audio, style: "display: none;", id: "mix-track-file-#{track_form.object.id}" %>
-  <% end %>    
+  <div class="input-group audio-file-uploader" id="audio-file-<%= track_form.object.id %>" style="<%= 'display: none' unless track_form.object.audio.blank? %>">
+    <%= track_form.file_field :audio, class: "audio-file-upload-field" %>
+    <div class="input-group-button">
+      <%= track_form.remove_nested_fields_link '<span class="fi-trash small"></span>'.html_safe, class: "alert button audio-file-trash" %>
+    </div>
+  </div>
+
 </div>
 
