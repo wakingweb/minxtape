@@ -56,12 +56,15 @@ article.mix {
   .audio-player {
     padding: 1em;
   }
-  .track-list li {
-    padding: 0.2em 0;
-    font-size: 0.875em;
-    color: $white;
-    a {
+  .track-list {
+    padding-bottom: 1em;
+    li {
+      padding: 0.2em 0;
+      font-size: 0.925em;
       color: $white;
+      a {
+        color: $white;
+      }
     }
   }
 }
@@ -99,10 +102,12 @@ article.mix {
   .mix-list article {
     min-height: 200px;
   }
-  article {
+  article.mix {
     min-height: 500px;
-  }
-  .track-list li {
-    font-size: 1.25em;
+    .track-list {
+      li {
+        font-size: 1.25em;
+      }
+    }
   }
 }
