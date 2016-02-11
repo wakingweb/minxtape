@@ -28,6 +28,14 @@ document.addEventListener 'DOMContentLoaded', ->
       if prevTrackIndicator
         prevTrackIndicator.style.display = 'none'
 
+    # when track is clicked, play track
+    [].forEach.call document.getElementsByClassName('trigger-track'), (v,i,a) ->
+      v.addEventListener 'click', (event) ->
+        event.preventDefault()
+        this.style.display = 'none'
+        document.getElementById("cancel-edit-audio-file-#{this.dataset.target}").style.display = ''
+        document.getElementById("audio-file-#{this.dataset.target}").style.display = ''
+
   # show audio uploader when track edit button clicked
   [].forEach.call document.getElementsByClassName('edit-audio-file'), (v,i,a) ->
     v.addEventListener 'click', (event) ->
