@@ -11,44 +11,39 @@
     </div>
   <% end %>
 
-  <div class="row">
-    <div class="medium-6 columns">
-      <div class="field">
-        <%= f.label :title, class: "ui-hidden-accessible" %>
-        <%= f.text_field :title, placeholder: "Give it a name!" %>
-      </div>
-      <fieldset class="fieldset">
-        <legend>Track Listing</legend>
-        <div id="nested-tracks-form">
-          <%= f.nested_fields_for :tracks do |track_form| %>
-            <%= render "track", track_form: track_form %>
-          <% end %>
-        </div>
-        <%= f.add_nested_fields_link :tracks, "Add a track", class: "button success" %>
-      </fieldset>
-      <div class="field">
-        <%= f.label :description, class: "ui-hidden-accessible" %>
-        <%= f.text_area :description, placeholder: "Any thoughts about this mix?" %>
-      </div>
-      <div class="actions">
-        <%= f.submit "Save Mix", class: "button radius success save-mix" %>
-      </div>
-    </div>
-    <div class="medium-6 columns">
-      <fieldset class="fieldset art">
-        <legend>Artwork</legend>
-        <div class="field">
-          <%= image_tag(@mix.art.thumb) if @mix.art? %>
-        </div>
-        <div class="field">
-          <%= f.file_field :art, accept: "image/jpeg,image/gif,image/png" %>
-          <%= f.hidden_field :art_cache %>
-        </div>
-      </fieldset>
-
-      <div class="actions">
-        <%= f.submit "Save Mix", class: "button radius success save-mix" %>
-      </div>
-    </div>
+  <div class="field">
+    <%= f.label :title, class: "ui-hidden-accessible" %>
+    <%= f.text_field :title, placeholder: "Give it a name!" %>
   </div>
+
+  <fieldset class="fieldset">
+    <legend>Track Listing</legend>
+    <div id="nested-tracks-form">
+      <%= f.nested_fields_for :tracks do |track_form| %>
+        <%= render "track", track_form: track_form %>
+      <% end %>
+    </div>
+    <%= f.add_nested_fields_link :tracks, "Add a track", class: "button success" %>
+  </fieldset>
+
+  <div class="field">
+    <%= f.label :description, class: "ui-hidden-accessible" %>
+    <%= f.text_area :description, placeholder: "Any thoughts about this mix?" %>
+  </div>
+
+  <fieldset class="fieldset art">
+    <legend>Artwork</legend>
+    <div class="field">
+      <%= image_tag(@mix.art.thumb) if @mix.art? %>
+    </div>
+    <div class="field">
+      <%= f.file_field :art, accept: "image/jpeg,image/gif,image/png" %>
+      <%= f.hidden_field :art_cache %>
+    </div>
+  </fieldset>
+
+  <div class="actions">
+    <%= f.submit "Save Mix", class: "button radius success save-mix" %>
+  </div>
+
 <% end %>
