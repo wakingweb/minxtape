@@ -7,6 +7,28 @@
     border-radius: $global-radius;
   }
 }
+.audio-player {
+  // background: transparent url("controls-slim.jpg") no-repeat;
+  // background-size: cover;
+  // background-position: top center;
+  // height: 155px;
+  // -webkit-border-radius: 0 0 $global-radius $global-radius;
+  // border-radius: 0 0 $global-radius $global-radius;
+}
+.audio-player {
+  padding: 1em 0 0 1em;
+}
+.track-list {
+    margin-left: 0.7em;
+}
+.track-list li span {
+    position: absolute;
+    left: -22px;
+}
+.track-list li {
+    margin-left: 1em;
+    position: relative;
+}
 article.mix {
   width: 100%;
   -webkit-border-radius: $global-radius;
@@ -35,7 +57,7 @@ article.mix {
     z-index: 2;
   }
   header {
-    padding: 5px;
+    padding: 0.5em;
     background-color: rgba(0,0,0,0.6);
     -webkit-border-radius: $global-radius $global-radius 0px 0px;
     border-radius: $global-radius $global-radius 0px 0px;
@@ -53,11 +75,7 @@ article.mix {
     display: inline-block;
     color: $white;
   }
-  .audio-player {
-    padding: 1em;
-  }
   .track-list {
-    padding-bottom: 1em;
     li {
       padding: 0.2em 0;
       font-size: 0.925em;
@@ -66,6 +84,7 @@ article.mix {
         color: $white;
       }
     }
+    padding-bottom: 2em;
   }
 }
 

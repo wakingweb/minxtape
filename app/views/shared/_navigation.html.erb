@@ -1,29 +1,33 @@
 <nav class="top-bar">
-  <div class="column row">
-    <div class="top-bar-title">
-      <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
-        <span class="menu-icon dark" data-toggle></span>
-      </span>
-      <strong><%= link_to 'MinxTape', root_path, class: "top-bar-title-link" %></strong>
-    </div>
-    <div id="responsive-menu">
-      <div class="top-bar-right">
-        <ul class="dropdown menu" data-dropdown-menu>
-          <% if user_signed_in? %>
-            <li>
-              <%= link_to current_user.email, "#" %>
-              <ul class="menu vertical">
-                <li><%= link_to "Edit profile", edit_user_registration_path %></li>
-                <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-              </ul>
-            </li>
-          <% else %>
-            <li><%= link_to "Log in", new_user_session_path, class: "button top-bar-login-link" %></li>
-            <li><%= link_to "Sign up", new_user_registration_path, class: "button" %></li>
-          <% end %>
+  <div class="row">
+    <div class="large-6 medium-8 small-12 small-centered columns">
 
-        </ul>
+      <div class="top-bar-title">
+        <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
+          <span class="menu-icon dark" data-toggle></span>
+        </span>
+        <strong><%= link_to 'MinxTape', root_path, class: "top-bar-title-link" %></strong>
       </div>
+      <div id="responsive-menu">
+        <div class="top-bar-right">
+          <ul class="dropdown menu" data-dropdown-menu>
+            <% if user_signed_in? %>
+              <li>
+                <%= link_to current_user.email, "#" %>
+                <ul class="menu vertical">
+                  <li><%= link_to "Edit profile", edit_user_registration_path %></li>
+                  <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+                </ul>
+              </li>
+            <% else %>
+              <li><%= link_to "Log in", new_user_session_path, class: "button top-bar-login-link" %></li>
+              <li><%= link_to "Sign up", new_user_registration_path, class: "button" %></li>
+            <% end %>
+
+          </ul>
+        </div>
+      </div>
+
     </div>
   </div>
 </nav>

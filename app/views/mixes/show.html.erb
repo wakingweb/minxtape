@@ -1,4 +1,4 @@
-<% content_for :title, @mix.title + ' - MinxTape' %>
+<% content_for :title, @mix.title + ' • MinxTape' %>
 
 <% content_for :breadcrumbs do %>
   <li><%= link_to 'All Mixes', mixes_path %></li>
@@ -7,18 +7,17 @@
   </li>
 <% end %>
 
-<div class="audio-player">
-  <audio controls preload="metadata" id="minxtape-player" data-position="1">
-    <source src="<%= @tracks.first.audio.url %>" type="audio/mpeg">
-      Your browser does not support the audio element.
-  </audio>
-</div>
-
 <article style="background-image: url(<%= @mix.art.thumb %>);" class="mix">
   <header>
     <h1><%= @mix.title %></h1>
     <p><%= @mix.description %></p>
   </header>
+  <div class="audio-player">
+    <audio controls preload="metadata" id="minxtape-player" data-position="1">
+      <source src="<%= @tracks.first.audio.url %>" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+  </div>
   <ul class="track-list">
     <%= render @tracks %>
   </ul>

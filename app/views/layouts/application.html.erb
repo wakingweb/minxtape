@@ -23,9 +23,10 @@
 
     <%= render "shared/alerts" %>
 
-    <% if content_for?(:breadcrumbs) %>
-      <div class="row">
-        <div class="large-12 columns">
+    <div class="row">
+      <div class="large-6 medium-8 small-12 small-centered columns">
+
+        <% if content_for?(:breadcrumbs) %>
           <nav aria-label="You are here:" role="navigation">
             <ul class="breadcrumbs">
 
@@ -33,18 +34,19 @@
 
             </ul>
           </nav>
+        <% end %>
+
+        <div class="row main-content">
+          <div class="large-12 columns">
+
+            <%= yield %>
+
+          </div>
         </div>
-      </div>
-    <% end %>
-
-    <div class="row main-content">
-      <div class="large-12 columns">
-
-        <%= yield %>
 
       </div>
     </div>
-    
+
     <%= render "shared/footer" %>
 
   </body>
