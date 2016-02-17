@@ -8,7 +8,7 @@
     </div>
   </div>
   <div class="input-group audio-file-uploader" id="audio-file-<%= track_form.object.id %>" style="<%= 'display: none' unless track_form.object.audio.blank? %>">
-    <%= track_form.file_field :audio, class: "audio-file-upload-field" %>
+    <%= track_form.file_field :audio, accept: "audio/mpeg,audio/mpeg3,audio/x-mpeg-3,audio/ogg,audio/mp4", class: "audio-file-upload-field" %>
     <div class="input-group-button">
       <%= track_form.remove_nested_fields_link '<span class="fi-trash small"></span>'.html_safe, class: "alert button audio-file-trash" %>
     </div>

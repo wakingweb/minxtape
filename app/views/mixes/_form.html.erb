@@ -30,19 +30,22 @@
         <%= f.label :description, class: "ui-hidden-accessible" %>
         <%= f.text_area :description, placeholder: "Any thoughts about this mix?" %>
       </div>
+      <div class="actions">
+        <%= f.submit "Save Mix", class: "button radius success save-mix" %>
+      </div>
     </div>
-    <div class="medium-6 columns">  
+    <div class="medium-6 columns">
       <fieldset class="fieldset art">
         <legend>Artwork</legend>
         <div class="field">
           <%= image_tag(@mix.art.thumb) if @mix.art? %>
         </div>
         <div class="field">
-          <%= f.file_field :art %>    
+          <%= f.file_field :art, accept: "image/jpeg,image/gif,image/png" %>
           <%= f.hidden_field :art_cache %>
         </div>
       </fieldset>
-  
+
       <div class="actions">
         <%= f.submit "Save Mix", class: "button radius success save-mix" %>
       </div>
