@@ -19,3 +19,6 @@
 //= require_self
 
 $(function(){ $(document).foundation(); });
+//= require react
+//= require react_ujs
+//= require components

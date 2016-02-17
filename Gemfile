@@ -23,6 +23,8 @@ gem 'jquery-rails'
 gem 'nested_form_fields'
 gem 'responders', '~> 2.0'
 gem 'figaro'
+gem 'dotenv-rails', :groups => [:development, :test]
+gem 'react-rails', '~> 1.6.0'
 
 # upgrade helpers
 gem 'protected_attributes' # https://github.com/rails/protected_attributes
