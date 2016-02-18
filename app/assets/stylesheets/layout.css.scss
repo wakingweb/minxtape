@@ -25,6 +25,9 @@ nav.top-bar {
     font-size: 1.475em;
     font-weight: 900;
   }
+  .is-dropdown-submenu {
+    z-index: 99;
+  }
 }
 #responsive-menu .menu li {
   padding-right: 0.5em;
