@@ -87,7 +87,7 @@ class MixesController < ApplicationController
 private
 
   def set_mix
-    @mix = Mix.find(params[:id])
+    @mix = Mix.friendly.find(params[:id])
   end
 
   def track_positions
@@ -101,19 +101,19 @@ private
   def mix_params
     params.require(:mix).permit(
       :id,
-      :title, 
+      :title,
       :description,
       :user_id,
       :art,
       :art_cache,
       :remove_art,
       tracks_attributes: [
-        :id, 
-        :name, 
-        :artist, 
-        :mix_id, 
-        :audio, 
-        :position, 
+        :id,
+        :name,
+        :artist,
+        :mix_id,
+        :audio,
+        :position,
         :_destroy
       ]
     )

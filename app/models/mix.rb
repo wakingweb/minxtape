@@ -1,6 +1,9 @@
 class Mix < ActiveRecord::Base
   include ActiveModel::ForbiddenAttributesProtection
-  
+
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
   belongs_to :user
   has_many :tracks, -> { order "position ASC" }, dependent: :destroy
 
