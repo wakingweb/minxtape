@@ -1,28 +1,30 @@
 # MinxTape <sup>[http://minxtape.com](http://minxtape.com)</sup>
 
-Mix Tapes.  Remixed.
+MinxTape is a new way to share music in the cloud by creating mix tapes from your own files. This project was initially inspired by the old [Muxtape](http://muxtape.tumblr.com/) project. I loved it's simplicity, and I found myself missing a way to share music compilations with other people. Especially when you want to use songs that are not available on streaming services.
 
-## Introduction
+## Architecture
 
-This is a project inspired by the old [Muxtape](http://muxtape.tumblr.com/) project. I loved it's simplicity, and I found myself missing a way to share music compilations with other people. Especially for those few tracks that aren't on streaming services.
+* Heroku
+* Rails 4
+* Foundation 6
+* Devise
+* Carrierwave/Fog/S3
+* HTML5 audio
 
 ## Features
 
-* mp3/ogg file upload
-* drag-and-drop re-ordering of tracks
-* add album art
+* create mixes by uploading files (mp3/m4a/ogg)
+* drag-and-drop re-orderding of songs
+* upload album art (mix tape background)
+* skip to song by clicking on song title
 * facebook authentication
 
-## Plans
+## Future Plans
 
 Here are some high priority improvements I'm working on:
 
 * Global play/pause/volume control, hide html5 audio components
-* Skip to track by clicking on track name
 * Auto-fill "Song - Artists" from  uploaded file metadata
-* Add username to user profiles
-* Show who each mix was created by
-* Add "My Mixes" page only showing current_user mixes
 
 ## License
 
