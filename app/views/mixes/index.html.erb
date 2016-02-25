@@ -21,12 +21,6 @@
           </header>
         </a>
       </article>
-      <% if user_signed_in? && (mix.user == current_user) %>
-        <ul class="mix-actions">
-          <li><%= link_to "Edit", edit_mix_path(mix), class: "small button" %></li>
-          <li><%= button_to "Destroy", mix, method: :delete, data: { confirm: "Are you sure?" }, class: "small button alert" %></li>
-        </ul>
-      <% end %>
     </div>
   <% end %>
 </div>
