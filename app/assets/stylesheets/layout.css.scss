@@ -5,69 +5,21 @@
   padding: 20px 0;
   display: inline-block;
 }
-.main-content {
+
+main {
   margin-top: 1em;
 }
-.row.pad {
-  padding: 2em 0;
+
+.row {
+  &.pad {
+    padding: 2em 0;
+  }
 }
+
 .hidden {
   display: none !important;
 }
-.new-mix {
-  left: 5px;
-  top: -15px;
-  z-index: 55;
-}
-nav.top-bar {
-  .top-bar-title-link {
-    color: $black;
-    font-size: 1.475em;
-    font-weight: 900;
-  }
-  .is-dropdown-submenu {
-    z-index: 99;
-  }
-}
-#responsive-menu .menu li {
-  padding-right: 0.5em;
-  &:last-child {
-    padding-right: 0;
-  }
-}
-nav .breadcrumbs {
-  margin-top: 15px;
-}
-.admin-actions {
-  float: right;
-}
-fieldset {
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-}
-fieldset.art {
-  margin-top: -7px;
-}
+
 .facebook-login {
   background-color: $facebook-blue;
-}
-
-/* forms */
-.ui-hidden-accessible {
-  display: none;
-}
-
-@include breakpoint(medium) {
-
-}
-
-@include breakpoint(small down) {
-  .top-bar {
-    .top-bar-title-link {
-      padding-left: 0.3em;
-    }
-  }
-  .menu-icon {
-    top: -4px;
-  }
 }

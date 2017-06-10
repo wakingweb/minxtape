@@ -6,7 +6,7 @@
     <% if user_signed_in? %>
       <%= link_to "+ Create a Mix Tape", new_user_mix_path(current_user), class: "button new-mix success" %>
     <% elsif %>
-      <p>A new way to share music.<br>Create mix tapes from your own files.<br><%= link_to "Log in", new_user_session_path %> or <%= link_to "Sign up", new_user_registration_path %> to get started.</p>
+      <p>A new old school way to share music.<br><%= link_to "Log in", new_user_session_path %> or <%= link_to "Sign up", new_user_registration_path %> to get started.</p>
     <% end %>
   </div>
 </div>
