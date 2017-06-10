@@ -89,7 +89,7 @@ private
   def track_params
     params.require(:track).permit(
       :id,
-      :mix_id, 
+      :mix_id,
       :artist,
       :name,
       :audio,
