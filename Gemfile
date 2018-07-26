@@ -2,9 +2,10 @@ source 'https://rubygems.org'
 
 gem 'rails', '~> 4.2.5.1'
 gem 'pg'
+gem 'dotenv-rails', :require => 'dotenv/rails-now', :groups => [:development, :test]
 gem 'puma'
-gem 'devise'
-gem 'omniauth-facebook'
+gem 'devise', '~> 4.4.3'
+gem 'omniauth-facebook', '~> 5.0.0'
 gem 'mail'
 gem 'postmark-rails', '~> 0.10.0'
 gem 'carrierwave'
@@ -23,7 +24,6 @@ gem 'jquery-rails'
 gem 'nested_form_fields'
 gem 'responders', '~> 2.0'
 gem 'figaro'
-gem 'dotenv-rails', :groups => [:development, :test]
 gem 'react-rails', '~> 1.6.0'
 gem 'friendly_id', '~> 5.1.0'
 
