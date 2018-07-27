@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '~> 4.2.7.1'
+gem 'sprockets', '3.6.3'
 gem 'pg'
 gem 'dotenv-rails', :require => 'dotenv/rails-now', :groups => [:development, :test]
 gem 'puma'
