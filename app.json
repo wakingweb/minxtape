@@ -2,6 +2,7 @@
   "name": "minxtape",
   "scripts": {
   },
+  "stack": "heroku-16",
   "env": {
     "AUTOBUS_URL": {
       "required": true
