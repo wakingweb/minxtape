@@ -27,6 +27,7 @@ gem 'responders', '~> 2.0'
 gem 'figaro'
 gem 'react-rails', '~> 1.6.0'
 gem 'friendly_id', '~> 5.1.0'
+gem 'id3tag', '~> 0.11.0'
 
 # upgrade helpers
 gem 'protected_attributes' # https://github.com/rails/protected_attributes

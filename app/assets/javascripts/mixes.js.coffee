@@ -7,6 +7,40 @@ document.addEventListener 'DOMContentLoaded', ->
       handle: '.fi-list'
       animation: 150
 
+  # populate song-artist when id3 tag is read
+  populateName = (i, tag) ->
+    el = document.getElementById('mix_tracks_attributes_' + i + '_name')
+    if tag.tags.title && tag.tags.artist
+      el.value = tag.tags.title + ' - ' + tag.tags.artist
+    else if tag.tags.title
+      el.value = tag.tags.title
+    else if tag.tags.artist
+      el.value = tag.tags.artist
+
+  # read id3 tag data when file is chosen
+  handleFileChange = (i,event) ->
+    file = event.target.files[0]
+    jsmediatags.read(file, {
+      onSuccess: (tag) ->
+        populateName i,tag
+      ,
+      onError: (error) ->
+        console.log error
+    })
+
+  # add listeners for id3 tag reader
+  setupFileChangeListeners = () ->
+    [].forEach.call document.getElementsByClassName('audio-file-upload-field'), (v,i,a) ->
+      v.addEventListener 'change', (event) ->
+        handleFileChange i,event
+
+  # re-initialize change listeners when new field is added dynamically
+  [].forEach.call document.getElementsByClassName('add_nested_fields_link'), (v,i,a) ->
+    v.addEventListener 'mouseup', (event) ->
+      setTimeout ( ->
+        setupFileChangeListeners()
+      ), 1000
+
   # minxtape player
   el = document.getElementById("minxtape-player")
   if el
