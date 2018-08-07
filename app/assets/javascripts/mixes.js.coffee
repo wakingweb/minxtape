@@ -20,13 +20,16 @@ document.addEventListener 'DOMContentLoaded', ->
   # read id3 tag data when file is chosen
   handleFileChange = (i,event) ->
     file = event.target.files[0]
-    jsmediatags.read(file, {
+    new (jsmediatags.Reader)(file).setTagsToRead([
+      'title'
+      'artist'
+    ]).read
       onSuccess: (tag) ->
         populateName i,tag
-      ,
+        return
       onError: (error) ->
-        console.log error
-    })
+        console.log ':(', error.type, error.info
+        return
 
   # add listeners for id3 tag reader
   setupFileChangeListeners = () ->
