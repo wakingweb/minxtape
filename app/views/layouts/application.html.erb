@@ -4,14 +4,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "MinxTape" %></title> 
+    <title><%= content_for?(:title) ? yield(:title) : "MinxTape" %></title>
 
     <%= stylesheet_link_tag "application" %>
     <link href="//cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <script type="text/javascript">
       if (window.location.hash && window.location.hash == '#_=_') {
-          window.location.hash = '';
+        if (window.history && history.pushState) {
+          window.history.pushState('', document.title, window.location.pathname);
+        }
       }
     </script>
     <%= csrf_meta_tags %>
