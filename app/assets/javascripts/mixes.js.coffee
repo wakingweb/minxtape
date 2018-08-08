@@ -7,8 +7,8 @@ document.addEventListener 'DOMContentLoaded', ->
       handle: '.fi-list'
       animation: 150
 
-  # populate song-artist when id3 tag is read
-  populateName = (i, tag) ->
+  # populate track name with song - artist (or filename if no id3 tags)
+  populateName = (i, tag, filename) ->
     el = document.getElementById('mix_tracks_attributes_' + i + '_name')
     if tag.tags.title && tag.tags.artist
       el.value = tag.tags.title + ' - ' + tag.tags.artist
@@ -16,6 +16,8 @@ document.addEventListener 'DOMContentLoaded', ->
       el.value = tag.tags.title
     else if tag.tags.artist
       el.value = tag.tags.artist
+    else
+      el.value = filename.replace(/\.[^/.]+$/, '')
 
   # read id3 tag data when file is chosen
   handleFileChange = (i,event) ->
@@ -25,7 +27,7 @@ document.addEventListener 'DOMContentLoaded', ->
       'artist'
     ]).read
       onSuccess: (tag) ->
-        populateName i,tag
+        populateName i,tag,file.name
         return
       onError: (error) ->
         console.log ':(', error.type, error.info
