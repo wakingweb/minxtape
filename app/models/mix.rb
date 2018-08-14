@@ -4,6 +4,10 @@ class Mix < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: :slugged
 
+  def should_generate_new_friendly_id?
+    title_changed?
+  end
+
   belongs_to :user
   has_many :tracks, -> { order "position ASC" }, dependent: :destroy
 
