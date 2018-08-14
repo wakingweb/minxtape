@@ -15,6 +15,7 @@ MinxTape is a new way to share music in the cloud by creating mix tapes from you
 
 * create mixes by uploading files (mp3/m4a/ogg)
 * drag-and-drop re-orderding of songs
+* auto-fills track title as "Song - Artist" from uploaded file metadata
 * upload album art (mix tape background)
 * skip to song by clicking on song title
 * facebook authentication
@@ -23,8 +24,13 @@ MinxTape is a new way to share music in the cloud by creating mix tapes from you
 
 Here are some high priority improvements I'm working on:
 
-* Global play/pause/volume control, hide html5 audio components
-* Auto-fill "Song - Artists" from  uploaded file metadata
+* global play/pause/volume control, hide html5 audio components
+* username control and user profile pages
+* ability to favorite mixes
+* ability to favorite users
+* option to make mixes private
+* dashboard view
+* unique share url for private mixes
 
 ## License
 
