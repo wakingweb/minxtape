@@ -22,12 +22,13 @@ document.addEventListener 'DOMContentLoaded', ->
   # read id3 tag data when file is chosen
   handleFileChange = (i,event) ->
     file = event.target.files[0]
+    filename = file.name
     new (jsmediatags.Reader)(file).setTagsToRead([
       'title'
       'artist'
     ]).read
       onSuccess: (tag) ->
-        populateName i,tag,file.name
+        populateName i,tag,filename
         return
       onError: (error) ->
         console.log ':(', error.type, error.info
@@ -37,9 +38,13 @@ document.addEventListener 'DOMContentLoaded', ->
   setupFileChangeListeners = () ->
     [].forEach.call document.getElementsByClassName('audio-file-upload-field'), (v,i,a) ->
       v.addEventListener 'change', (event) ->
+        console.log event
         handleFileChange i,event
 
-  # re-initialize change listeners when new field is added dynamically
+  # initialize upload change listeners
+  setupFileChangeListeners()
+
+  # re-initialize upload change listeners when new field is added dynamically
   [].forEach.call document.getElementsByClassName('add_nested_fields_link'), (v,i,a) ->
     v.addEventListener 'mouseup', (event) ->
       setTimeout ( ->
