@@ -1,6 +1,6 @@
 # MinxTape <sup>[http://minxtape.com](http://minxtape.com)</sup>
 
-MinxTape is a new way to share music in the cloud by creating mix tapes from your own files. This project was initially inspired by the old [Muxtape](http://muxtape.tumblr.com/) project. I loved it's simplicity, and I found myself missing a way to share music compilations with other people. Especially when you want to use songs that are not available on streaming services.
+MinxTape is a new way to share music in the cloud by creating mix tapes from your own files. This project was initially inspired by the old [Muxtape](https://en.wikipedia.org/wiki/Muxtape) project. I loved it's simplicity, and I found myself missing a way to share music compilations with other people. Especially when you want to use songs that are not available on streaming services.
 
 ## Architecture
 
