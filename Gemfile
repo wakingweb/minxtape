@@ -36,7 +36,7 @@ group :development do
   gem 'letter_opener_web', '~> 1.2.0'
   gem 'foreman'
   gem 'spring'
-  gem 'web-console', '~> 2.3.0'
+  gem 'web-console', '~> 3.7.0'
 end
 
 group :development, :test do
