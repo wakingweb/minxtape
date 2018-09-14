@@ -1,8 +1,8 @@
-<div class="row pad">
-  <div class="small-4 column">
+<div class="grid-x grid-padding-x">
+  <div class="cell small-4">
     <%= image_tag "tape.jpg" %>
   </div>
-  <div class="small-8 column">
+  <div class="cell small-4">
     <% if user_signed_in? %>
       <%= link_to "+ Create a Mix Tape", new_user_mix_path(current_user), class: "button new-mix success" %>
     <% elsif %>
@@ -11,9 +11,9 @@
   </div>
 </div>
 
-<div class="row small-up-2 mix-list">
+<div class="grid-x grid-padding-x small-up-3 mix-list">
   <% @mixes.each do |mix| %>
-    <div class="column">
+    <div class="cell">
       <article style="background-image: url(<%= mix.art.thumb %>);" class="mix">
         <a href="<%= mix_path(mix) %>">
           <header>
