@@ -1,4 +1,4 @@
-class AddPositionToTracks < ActiveRecord::Migration
+class AddPositionToTracks < ActiveRecord::Migration[4.2]
   def up
     add_column :tracks, :position, :string
   end

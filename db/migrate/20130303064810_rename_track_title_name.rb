@@ -1,4 +1,4 @@
-class RenameTrackTitleName < ActiveRecord::Migration
+class RenameTrackTitleName < ActiveRecord::Migration[4.2]
   def up
     rename_column :tracks, :title, :name
   end
