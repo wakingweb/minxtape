@@ -431,7 +431,7 @@ DEPENDENCIES
   postmark-rails
   pry
   puma
-  rails (~> 5.1, >= 5.1.6)
+  rails (~> 5.2, >= 5.2.1)
   rails-controller-testing
   rails_12factor
   responders (~> 2.0)

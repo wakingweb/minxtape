@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 5.1', '>= 5.1.6'
+gem 'rails', '~> 5.2', '>= 5.2.1'
 gem 'sprockets'
 gem 'pg'
 gem 'puma'
