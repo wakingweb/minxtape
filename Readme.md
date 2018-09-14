@@ -5,7 +5,7 @@ MinxTape is a new way to share music in the cloud by creating mix tapes from you
 ## Architecture
 
 * Heroku
-* Rails 4
+* Rails 5
 * Foundation 6
 * Devise
 * Carrierwave/Fog/S3
