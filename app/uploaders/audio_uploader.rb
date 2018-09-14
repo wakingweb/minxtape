@@ -1,9 +1,5 @@
 # encoding: utf-8
-require 'carrierwave/processing/mime_types'
-
 class AudioUploader < CarrierWave::Uploader::Base
-
-  include CarrierWave::MimeTypes
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
@@ -57,6 +53,4 @@ class AudioUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-
-  process :set_content_type
 end
