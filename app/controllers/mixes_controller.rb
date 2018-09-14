@@ -1,8 +1,8 @@
 class MixesController < ApplicationController
 
-  before_filter :set_mix, except: [:index, :new, :create]
-  before_filter :authenticate_user!, except: [:index, :show]
-  before_filter :sort, only: :update
+  before_action :set_mix, except: [:index, :new, :create]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :sort, only: :update
 
   respond_to :html, :json
 

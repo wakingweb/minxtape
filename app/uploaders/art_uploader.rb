@@ -2,8 +2,6 @@
 
 class ArtUploader < CarrierWave::Uploader::Base
 
-  include CarrierWave::MimeTypes
-
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
@@ -64,6 +62,4 @@ class ArtUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-
-  process :set_content_type
 end

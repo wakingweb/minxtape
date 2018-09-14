@@ -1,4 +1,4 @@
-class Mix < ActiveRecord::Base
+class Mix < ApplicationRecord
   include ActiveModel::ForbiddenAttributesProtection
 
   extend FriendlyId
@@ -13,4 +13,6 @@ class Mix < ActiveRecord::Base
 
   accepts_nested_attributes_for :tracks, :reject_if => lambda { |t| t[:audio].blank? && t[:name].blank? }, allow_destroy: true
   mount_uploader :art, ArtUploader
+
+  validates_presence_of :tracks, message: "can't be blank. Any good mix needs at least one track :)"
 end

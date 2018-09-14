@@ -1,15 +1,17 @@
 <% if content_for?(:breadcrumbs) %>
   <nav aria-label="You are here:" role="navigation">
 
-    <div class="row">
-      <div class="large-7 medium-8 small-12 small-centered columns">
+  	<div class="grid-container">
+      <div class="grid-x">
+        <div class="cell medium-10 medium-offset-1 small-12">
 
-        <ul class="breadcrumbs">
+          <ul class="breadcrumbs">
 
-          <%= yield :breadcrumbs %>
+            <%= yield :breadcrumbs %>
 
-        </ul>
+          </ul>
 
+        </div>
       </div>
     </div>
 
