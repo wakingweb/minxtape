@@ -1,4 +1,4 @@
-class Track < ActiveRecord::Base
+class Track < ApplicationRecord
   include ActiveModel::ForbiddenAttributesProtection
 
   belongs_to :mix

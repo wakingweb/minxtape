@@ -1,4 +1,4 @@
-class Mix < ActiveRecord::Base
+class Mix < ApplicationRecord
   include ActiveModel::ForbiddenAttributesProtection
 
   extend FriendlyId
