@@ -1,20 +1,24 @@
 <div class="grid-x grid-padding-x">
-  <div class="cell small-4">
-    <%= image_tag "tape.jpg" %>
-  </div>
-  <div class="cell small-4">
-    <% if user_signed_in? %>
-      <%= link_to "+ Create a Mix Tape", new_user_mix_path(current_user), class: "button new-mix success" %>
-    <% elsif %>
-      <p>A new old school way to share music.<br><%= link_to "Log in", new_user_session_path %> or <%= link_to "Sign up", new_user_registration_path %> to get started.</p>
-    <% end %>
+  <div class="cell medium-10 medium-offset-1 large-8 large-offset-2">
+    <div class="grid-x grid-padding-x minxtape-intro">
+      <div class="cell small-4">
+        <%= image_tag "tape.jpg" %>
+      </div>
+      <div class="cell small-8">
+        <% if user_signed_in? %>
+          <%= link_to "+ Create a Mix Tape", new_user_mix_path(current_user), class: "button new-mix success" %>
+        <% elsif %>
+          <p>A new old school way to share music.<br><%= link_to "Log in", new_user_session_path %> or <%= link_to "Sign up", new_user_registration_path %> to get started.</p>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="grid-x grid-padding-x small-up-3 mix-list">
+<div class="grid-x grid-padding-x large-up-4 medium-up-3 small-up-2 mix-list">
   <% @mixes.each do |mix| %>
     <div class="cell">
-      <article style="background-image: url(<%= mix.art.thumb %>);" class="mix">
+      <article style="background-image: url(<%= mix.art.thumb.url %>);" class="mix">
         <a href="<%= mix_path(mix) %>">
           <header>
             <h1><%= mix.title %></h1>

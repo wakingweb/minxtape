@@ -1,6 +1,10 @@
 @import '_settings';
 @import '_mixins';
 
+.minxtape-intro {
+  margin-bottom: 1em;
+}
+
 .mix-list {
   article {
     -webkit-border-radius: $global-radius;
@@ -19,12 +23,6 @@
     padding-right: 0.5em;
     float: left;
   }
-}
-
-.new-mix {
-  left: 5px;
-  top: -15px;
-  z-index: 55;
 }
 
 #nested-tracks-form {

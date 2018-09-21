@@ -1,6 +1,6 @@
 @import '_settings';
 
-article.mix {
+.mix {
   width: 100%;
   -webkit-border-radius: $global-radius;
   border-radius: $global-radius;
@@ -45,9 +45,9 @@ article.mix {
     display: inline-block;
     color: $white;
     margin: 0;
-    padding: 5px;
+    padding: 0 5px;
     font-weight: 900;
-    font-size: 1.25rem;
+    font-size: 1rem;
     text-transform: lowercase;
   }
 
@@ -86,6 +86,14 @@ article.mix {
       a {
         color: $white;
       }
+    }
+  }
+
+  @include breakpoint(medium) {
+
+    h1 {
+      padding: 5px;
+      font-size: 1.25rem;
     }
   }
 }

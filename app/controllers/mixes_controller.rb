@@ -9,7 +9,11 @@ class MixesController < ApplicationController
   # GET /mixes
   # GET /mixes.json
   def index
-    @mixes = Mix.all
+    if params.has_key?(:user_id)
+      @mixes = Mix.where(user_id: params[:user_id])
+    else
+      @mixes = Mix.all
+    end
 
     respond_with @mixes
   end

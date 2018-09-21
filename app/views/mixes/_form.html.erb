@@ -34,7 +34,7 @@
   <fieldset class="fieldset art">
     <legend>Artwork</legend>
     <div class="field">
-      <%= image_tag(@mix.art.thumb) if @mix.art? %>
+      <%= image_tag(@mix.art.thumb.url) if @mix.art? %>
     </div>
     <div class="field">
       <%= f.file_field :art, accept: "image/jpeg,image/gif,image/png" %>
